@@ -21,4 +21,4 @@ deepspeed --num_gpus=4 ./run_translation_deepspeed.py \
 	--per_device_eval_batch_size $BS \
 	--source_lang en_XX \
 	--target_lang en_XX \
-	--deepspeed ds_config_zero3_1.json 
+	--deepspeed  /home/tuhin.chakr/transformers/tests/deepspeed/ds_config_zero3_1.json 
