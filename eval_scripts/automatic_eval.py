@@ -1,6 +1,3 @@
-"""
-"""
-
 import sys
 import pronouncing
 import json
@@ -17,7 +14,7 @@ if eval_type == "subject":
     with open(filename, 'r') as f:
         for line in f:
             obj = json.loads(line.strip())
-            src = obj['translation']['en1']
+            src = obj['instruction']
             t = re.findall("about '([^']*)'", src)
             t2 = re.findall("word '([^']*)'", src)
             t3 = re.findall("ending in '([^']*)'", src)
@@ -29,7 +26,7 @@ if eval_type == "subject":
             for i in t:
                 temp+=i+' '
             subj.append(temp)
-            gen.append(obj['translation']['en2'])
+            gen.append(obj['generation'])
     
     rouge = load_metric("rouge")
     results = rouge.compute(predictions = gen, references = subj)
@@ -45,14 +42,14 @@ elif eval_type == "rhyme":
     with open(filename, 'r') as f:
         for line in f:
             obj = json.loads(line.strip())
-            src = obj['translation']['en1']
+            src = obj['instruction'] #translation']['en1']
             t = re.findall("rhymes with '([^']*)'", src)
             t = list(set(t))
             if len(t) == 0:
                 continue
             #print(t, src)
             src_word = t[0]
-            gen = obj['translation']['en2']
+            gen = obj['generation'] #translation']['en2']
             last_word = gen.split()[-1]
             #print(last_word, gen)
             #print(pronouncing.rhymes(src_word))
@@ -77,13 +74,13 @@ elif eval_type == "metaphor":
     with open(filename, 'r') as f:
         for line in f:
             obj = json.loads(line.strip())
-            src = obj['translation']['en1']
+            src = obj['instruction']#'translation']['en1']
             if 'metaphor' not in src:
                 continue
             t = re.findall("'([^']*)'", src)
             if len(t) == 0:
                 continue
-            gen = obj['translation']['en2']
+            gen = obj['generation']#'translation']['en2']
             # print(t, src, gen)
             comp = False
             subj = True
@@ -110,13 +107,13 @@ elif eval_type == "simile":
     with open(filename, 'r') as f:
         for line in f:
             obj = json.loads(line.strip())
-            src = obj['translation']['en1']
+            src = obj['instruction']#'translation']['en1']
             if 'simile' not in src:
                 continue
             t = re.findall("'([^']*)'", src)
             if len(t) == 0:
                 continue
-            gen = obj['translation']['en2']
+            gen = obj['generation']#'translation']['en2']
             # print(t, src, gen)
             comp = False
             subj = True
@@ -138,5 +135,4 @@ elif eval_type == "simile":
                 # ch = input()
     print("Percentage with subject and comparator: ", float(succ)/tot, tot, succ)
     print("Percentage with comparator: ", float(comp_ct)/tot, tot, comp_ct)
-
 
