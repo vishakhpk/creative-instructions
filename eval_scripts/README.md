@@ -7,9 +7,9 @@ python generate_output.py <filename with instructions i.e. val.json> <stored dir
 ```
 This creates a new jsonl file with stored generations along with the instructions. Proceed to automatic eval. 
 
-Currently tests for subject (rouge match), rhyme (with a dictionary i.e. not perect), simile and metaphor (with templates)
+Currently tests for subject (rouge match), rhyme (with a dictionary i.e. not perect), haikus (subject and syllable count), simile and metaphor (with templates)
 ```
-python automatic_eval.py <filename with instructions and stored generations> <type of eval: rhyme/subejct/simile/metaphor>
+python automatic_eval.py <filename with instructions and stored generations> <type of eval: rhyme/subejct/simile/metaphor/haiku>
 ```
 
 ## TODOs

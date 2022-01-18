@@ -2,6 +2,8 @@ import sys
 import pronouncing
 import json
 import re
+import syllapy
+import scipy.stats as st
 from datasets import load_metric
 
 filename = sys.argv[1]
@@ -120,6 +122,7 @@ elif eval_type == "simile":
             for item in t:
                 if item.lower() not in gen.lower():
                     subj = False
+
             comp_list = ["is a", "is like a", "is an", "is like an", "is the", "is like the", 'like a', 'like the', "is like"]
             for item in comp_list:
                 if item in gen:
@@ -136,3 +139,52 @@ elif eval_type == "simile":
     print("Percentage with subject and comparator: ", float(succ)/tot, tot, succ)
     print("Percentage with comparator: ", float(comp_ct)/tot, tot, comp_ct)
 
+elif eval_type == "haiku":
+    exact = 0
+    close = 0
+    subj_count = 0
+    tot = 0
+    perfect = 0
+    near_perfect = 0
+    counts = []
+    with open(filename, 'r') as f:
+        for line in f:
+            obj = json.loads(line.strip())
+            src = obj['instruction']#'translation']['en1']
+            if 'haiku' not in src:
+                continue
+            t = re.findall("'([^']*)'", src)
+            if len(t) == 0:
+                continue
+            gen = obj['generation']#'translation']['en2']
+    
+            subj = True
+            for item in t:
+                if item.lower() not in gen.lower():
+                    subj = False
+
+            count = 0
+            for word in gen.split():
+                if word == '/':
+                    continue
+                count+=syllapy.count(word)
+            # print(gen, count)
+            if count == 17:
+                exact+=1
+            if count >= 15 and count <= 19:
+                close+=1
+            if subj and count == 17:
+                perfect+=1
+            if subj and count >= 15 and count <= 19:
+                near_perfect+=1
+            tot+=1
+            counts.append(count)
+            # ch = input()
+    print("Total: ", tot)
+    print("Exactly 17 syllables: ", exact, float(exact)/tot)
+    print("Subject + Exactly 17 syllables: ", perfect, float(perfect)/tot)
+    print("Between 15 and 19 syllables: ", close, float(close)/tot)
+    print("Subject + Between 15 and 19 syllables: ", near_perfect, float(near_perfect)/tot)
+
+    stat = st.binned_statistic(counts, counts, bins = 10, statistic = 'count')
+    print(stat)
