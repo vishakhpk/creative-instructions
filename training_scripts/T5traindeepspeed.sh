@@ -11,7 +11,7 @@ deepspeed --num_gpus=4 ./run_translation_deepspeed.py \
 	--do_eval \
 	--train_file /home/tuhin.chakr/train.json \
 	--validation_file /home/tuhin.chakr/val.json \
-	--learning_rate 1e-3 \
+	--learning_rate 1e-4 \
 	--gradient_accumulation_steps 21 \
 	--overwrite_output_dir \
 	--max_source_length 64 \
