@@ -1,6 +1,8 @@
 # Evaluation Scripts
 
-## Automatic Eval
+## Creative Instructions
+
+### Automatic Eval
 First run the generation script:
 ```
 python generate_output.py <filename with instructions i.e. val.json> <stored directory of model>
@@ -16,3 +18,12 @@ python automatic_eval.py <filename with instructions and stored generations> <ty
 1. More precise automatic eval
 2. Design/HTML for human eval
 3. Code to generate test sets
+
+
+## SCAN
+
+### Accuracy of generations
+
+```
+python eval_accuracy.py <filename of generations from generate_output>
+```
