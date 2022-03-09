@@ -2,6 +2,17 @@
 
 ## Creative Instructions
 
+### OpenAI InstructGPT
+First ensure that you're API key with OpenAI is exported as an environment variable as:
+```
+export OPENAI_API_KEY={your key here}
+```
+Then access the API as:
+```
+python inference_openai_api.py <prompt filename> <filename with instructions> <output filename>
+```
+
+
 ### Automatic Eval
 First run the generation script:
 ```
