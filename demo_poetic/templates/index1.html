@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Instructions for Creativity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <style>
+	body {
+            background-image: url('../static/neruda.jpeg');
+            background-size: 20%;
+	    background-repeat: no-repeat;
+	    background-position: bottom -225px left 7px;
+        }
+        h1 {text-align: center;}
+        .center_div {
+            margin: 0 auto;
+            width: 50%
+                /* value of your choice which suits your alignment */
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <h1><i>Instructions for Creativity</i></h1> <br>
+   
+    <form action = "{{ url_for('home') }}" class="center_div" method="POST">
+
+        <label for="poem">Enter a creative instruction:</label>
+        <textarea name="poem" class="form-control" id="poem" rows="3"></textarea>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  
+   <footer id="sticky-footer" class="py-4 text-black-50">
+        <div class="container text-center">
+            <small>Copyright &copy; Created by Tuhin Chakrabarty & Visakh Padmakumar</small>
+            <br>
+        </div>
+    </footer>
+
+  </body>
+
+</html>
