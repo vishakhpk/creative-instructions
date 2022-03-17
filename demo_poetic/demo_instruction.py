@@ -96,7 +96,17 @@ def get_translation(topic,startword,endword,lang,poemsofar):
 		print(instruction)
 		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
 		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 5, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
-		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)	
+		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
+	elif lang=='comp3':
+		last_sentence = re.sub(r'[^\w\s]', '', poemsofar[-1])
+		last_word = last_sentence.split()[-1]
+		last_word = random.choice(pronouncing.rhymes(last_word)[0:10])
+		print("Topic is ",topic)
+		instruction = random.choice(["Write a poetic sentence that contains the word '"+topic+"' and ending in '"+last_word+"'", "Write a poetic sentence that includes the word '"+topic+"' and ending in '"+last_word+"'", "Write a poetic sentence about '"+topic+"' and ending in '"+last_word+"'"])
+		print(instruction)
+		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
+		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 5, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
+		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
 
 if __name__ == '__main__':
 	instructiontokenizer = AutoTokenizer.from_pretrained("/mnt/nlp_swordfish/tuhin/poetryT511bcheckpoints/epoch3") 
