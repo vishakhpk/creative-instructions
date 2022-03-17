@@ -75,7 +75,7 @@ def get_translation(topic,startword,endword,lang,poemsofar):
 	elif lang=="endwithrhyme":
 		last_sentence = re.sub(r'[^\w\s]', '', poemsofar[-1])
 		last_word = last_sentence.split()[-1]
-		instruction = random.choice(["Write a poetic sentence that ends in a word which rhymes with  '"+last_word+"'","Generate a poetic sentence that ends in a word which rhymes with  '"+last_word+"'"])
+		instruction = random.choice(["Write a poetic sentence that ends in a word which rhymes with '"+last_word+"'","Generate a poetic sentence that ends in a word which rhymes with '"+last_word+"'"])
 		print(instruction)
 		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
 		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 5, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
