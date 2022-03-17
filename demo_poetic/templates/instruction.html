@@ -28,13 +28,13 @@
 
 <body>
 	<br>
-	<h1> <i>Instructions for Creativity</i> </h1> <br>
-	<p class="lead center_div"><b>Instruction:</b></p>
+	<h1> <i>CoPoet: Collaborative Poetry Writing with Instructions</i> </h1> <br>
+	<p class="lead center_div"><b>Poem:</b></p>
 	{% for line in poem %}
     <p class="lead center_div">{{line}}</p>
 	{% endfor %}
 	<br>
-	<p class="lead center_div"><b>Model Output: </b> </p>
+	<p class="lead center_div"><b>Choose from below options: </b> </p>
 	{% for line in translation %}
     <p class="lead center_div">{{line}}</p>
 	{% endfor %}
@@ -43,10 +43,38 @@
 	<p class="lead center_div"><b>Try Again:</b></p>
 	<br>
   <form action = "{{ url_for('home') }}" class="center_div" method="POST">
- 
-		<label for="poem">Enter a creative instruction:</label>
-	    <textarea name="poem" class="form-control" id="poem" rows="3"></textarea>
+ 	
+ 	  <label for="poemsofar">Poem so far</label>
+	    <textarea name="poemsofar" class="form-control" id="poemsofar" rows="3"></textarea>
 	    <br>
+
+ 	 <label for="lang">Choose an instruction:</label>
+	  <select id="lang" name="lang">
+	    <option value="about">Enter a topic</option>
+	    <option value="suggest">Suggest next sentence</option>
+	    <option value="suggesttopic">Suggest a topic for next sentence</option>
+	    <option value="endwithrhyme">Rhyme with previous sentence</option>
+	    <option value="endwithaword">Suggest next sentence ending with a custom word</option>
+	    <option value="startwithaword">Suggest next sentence starting with a custom word</option>
+	    <option value="comp1">Suggest next sentence with a specific topic and ending in a custom word</option>
+	    <option value="comp2">Suggest next sentence starting with a custom word and ending in a custom word</option>
+	    <option value="comp3">Suggest next sentence with a specific topic and rhyming with previous sentence</option>
+	  </select>
+	  <br>
+	  <br>
+
+		<label for="topic">Topic</label>
+	    <textarea name="topic" class="form-control" id="topic" rows="1" cols="10"></textarea>
+	    <br>
+
+	    <label for="endword">Ending Word</label>
+	    <textarea name="endword" class="form-control" id="endword" rows="1" cols="10"></textarea>
+	    <br>
+
+	    <label for="startword">Starting Word</label>
+	    <textarea name="startword" class="form-control" id="startword" rows="1" cols="10"></textarea>
+	    <br>
+
 	    <button type="submit" class="btn btn-primary">Submit</button>
 
 	</form>
