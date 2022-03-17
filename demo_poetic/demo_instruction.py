@@ -30,6 +30,7 @@ def get_translation(topic,startword,endword,lang,poemsofar):
 	if lang=="about":
 		print("Topic is ",topic)
 		instruction = random.choice(["Write a poetic sentence that contains the word '"+topic+"'", "Write a poetic sentence that includes the word '"+topic+"'", "Write a poetic sentence about '"+topic+"'"])
+		print(instruction)
 		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
 		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 5, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
 		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
@@ -37,6 +38,7 @@ def get_translation(topic,startword,endword,lang,poemsofar):
 	elif lang=="suggest":
 		last_sentence = poemsofar[-1]
 		instruction = random.choice(["Write a next sentence in a poetry given the previous sentence '"+last_sentence+"'","Generate a next sentence in a poetry given the previous sentence '"+last_sentence+"'"])
+		print(instruction)
 		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
 		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 5, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
 		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
@@ -44,6 +46,7 @@ def get_translation(topic,startword,endword,lang,poemsofar):
 	elif lang=="suggesttopic":
 		last_sentence = poemsofar[-1]
 		instruction = random.choice(["Write a next sentence in a poetry given the previous sentence '"+last_sentence+"'","Generate a next sentence in a poetry given the previous sentence '"+last_sentence+"'"])
+		print(instruction)
 		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
 		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 5, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
 		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
@@ -55,6 +58,7 @@ def get_translation(topic,startword,endword,lang,poemsofar):
 	elif lang=="endwithaword":
 		print("End word is ",endword)
 		instruction = random.choice(["Write a poetic sentence ending in '"+endword+"'","Generate a poetic sentence ending in '"+endword+"'"])
+		print(instruction)
 		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
 		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 5, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
 		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
@@ -62,7 +66,8 @@ def get_translation(topic,startword,endword,lang,poemsofar):
 	elif lang=="startwithaword":
 		print("Start word is ",startword)
 		startword = startword.capitalize()
-		iinstruction = random.choice(["Write a poetic sentence that starts with the word '"+startword+"'","Generate a poetic sentence that starts with the word '"+startword+"'"])
+		instruction = random.choice(["Write a poetic sentence that starts with the word '"+startword+"'","Generate a poetic sentence that starts with the word '"+startword+"'"])
+		print(instruction)
 		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
 		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 5, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
 		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
@@ -70,7 +75,8 @@ def get_translation(topic,startword,endword,lang,poemsofar):
 	elif lang=="endwithrhyme":
 		last_sentence = re.sub(r'[^\w\s]', '', poemsofar[-1])
 		last_word = last_sentence.split()[-1]
-		iinstruction = random.choice(["Write a poetic sentence that ends in a word which rhymes with  '"+last_word+"'","Generate a poetic sentence that ends in a word which rhymes with  '"+last_word+"'"])
+		instruction = random.choice(["Write a poetic sentence that ends in a word which rhymes with  '"+last_word+"'","Generate a poetic sentence that ends in a word which rhymes with  '"+last_word+"'"])
+		print(instruction)
 		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
 		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 5, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
 		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
