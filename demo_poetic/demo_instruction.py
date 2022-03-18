@@ -4,6 +4,8 @@ import os, sys,random
 import yake
 import pronouncing
 import re
+import sys
+import torch
 
 os.environ["CUDA_VISIBLE_DEVICES"]="0,1"
 import numpy as np
@@ -22,7 +24,7 @@ def home():
 		if "poemsofar" in form:
 			poem_lines = form["poemsofar"].split('\n')
 		else:
-			poem_lines = []
+			poem_lines = [] # ["q", "w", "e"]
 		return render_template("instruction.html", poem=poem_lines, translation=get_translation(topic,startword,endword,lang,poem_lines))
 
 	return render_template("index1.html", f='')
@@ -35,6 +37,7 @@ def get_translation(topic,startword,endword,lang,poemsofar):
 		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
 		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 5, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
 		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
+		# output = ["a", "b", "c", "d", "e"]
 		return output
 	elif lang=="suggest":
 		last_sentence = poemsofar[-1]
@@ -109,9 +112,11 @@ def get_translation(topic,startword,endword,lang,poemsofar):
 		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
 
 if __name__ == '__main__':
-	instructiontokenizer = AutoTokenizer.from_pretrained("/mnt/nlp_swordfish/tuhin/poetryT511bcheckpoints/epoch3") 
-	instructionmodel = AutoModelForSeq2SeqLM.from_pretrained("/mnt/nlp_swordfish/tuhin/poetryT511bcheckpoints/epoch3")
+	model_dir = sys.argv[1]
+	instructiontokenizer = AutoTokenizer.from_pretrained(model_dir) 
+	instructionmodel = AutoModelForSeq2SeqLM.from_pretrained(model_dir)
 	kw_extractor = yake.KeywordExtractor(n=3)
 	print("Loaded......")
-	instructionmodel.parallelize()
+	if torch.cuda.is_available() and torch.cuda.device_count() > 1:
+		instructionmodel.parallelize()
 	app.run(host='0.0.0.0',port=8056, debug=False)

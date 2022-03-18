@@ -31,13 +31,34 @@
 	<h1> <i>CoPoet: Collaborative Poetry Writing with Instructions</i> </h1> <br>
 	<p class="lead center_div"><b>Poem:</b></p>
 	{% for line in poem %}
-    <p class="lead center_div">{{line}}</p>
+    <p class="lead center_div" id="poem_line_{{loop.index}}">{{line}}</p>
 	{% endfor %}
 	<br>
 	<p class="lead center_div"><b>Choose from below options: </b> </p>
 	{% for line in translation %}
-    <p class="lead center_div">{{line}}</p>
+		<p class="lead center_div"> <input type="radio" id="item_{{loop.index}}" name="model_output" value="{{line}}" onclick="handleClick(this);"> <label for="item_{{loop.index}}">{{line}}</label><br> </p>
 	{% endfor %}
+	<script>
+	function handleClick(selectedOption) {
+			// alert(selectedOption.value)
+			var op_text = ""
+			for(let i=1; i<=4; i++)	{
+				var id_name = "poem_line_".concat(i)
+				// alert(id_name)
+				try  {	
+					op_text = op_text.concat(document.getElementById(id_name).innerText);
+					op_text = op_text.concat("\n")
+				}
+				catch (error) {
+					console.error(error);
+					break;
+				}
+				// alert(op_text)
+			}
+			op_text = op_text.concat(selectedOption.value);
+			document.getElementById("poemsofar").value = op_text;
+		}
+	</script>
 	<br>
 	<hr>
 	<p class="lead center_div"><b>Try Again:</b></p>
@@ -45,7 +66,7 @@
   <form action = "{{ url_for('home') }}" class="center_div" method="POST">
  	
  	  <label for="poemsofar">Poem so far</label>
-	    <textarea name="poemsofar" class="form-control" id="poemsofar" rows="3"></textarea>
+	    <textarea name="poemsofar" class="form-control" id="poemsofar" rows="4"></textarea>
 	    <br>
 
  	 <label for="lang">Choose an instruction:</label>
@@ -81,7 +102,7 @@
 	
 	<footer id="sticky-footer" class="py-4 text-black-50">
         <div class="container text-center">
-            <small>Copyright &copy; Created by Tuhin Chakrabarty & Visakh Padmakumar</small>
+            <small>Copyright &copy; Created by Tuhin Chakrabarty & Vishakh Padmakumar</small>
             <br>
         </div>
     	</footer>
