@@ -21,16 +21,28 @@ def home():
 		startword = form["startword"]
 		endword = form["endword"]
 		lang = form["lang"]
-		rhymewithword = form["rhymewithword"]
+		rhymewithword = None # form["rhymewithword"]
+		nl_inst = form["nlinstruction"]
+		if nl_inst == "Hit the button above to edit your instruction in text":
+			nl_inst = None
 		if "poemsofar" in form:
 			poem_lines = form["poemsofar"].split('\n')
 		else:
-			poem_lines = [] # ["q", "w", "e"]
-		return render_template("instruction.html", poem=poem_lines, translation=get_translation(topic,startword,endword,rhymewithword,lang,poem_lines))
+			poem_lines =  []
+			# poem_lines =  ["q", "w", "e"]
+		return render_template("instruction.html", poem=poem_lines, translation=get_translation(topic, startword, endword, rhymewithword, lang, poem_lines, nl_inst))
 
 	return render_template("index1.html", f='')
 
-def get_translation(topic,startword,endword,rhymewithword,lang,poemsofar):
+def get_translation(topic, startword, endword, rhymewithword, lang, poemsofar, nl_inst):
+	if nl_inst is not None:
+		instruction = nl_inst
+		print(instruction)
+		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
+		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 5, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
+		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
+		# output = ["a", "b", "c", "d", "e"]
+		return output
 	if lang=="about":
 		print("Topic is ",topic)
 		instruction = random.choice(["Write a poetic sentence that contains the word '"+topic+"'", "Write a poetic sentence that includes the word '"+topic+"'", "Write a poetic sentence about '"+topic+"'"])
@@ -126,7 +138,11 @@ def get_translation(topic,startword,endword,rhymewithword,lang,poemsofar):
 
 if __name__ == '__main__':
 	model_dir = "/mnt/nlp_swordfish/tuhin/poetryT511bcheckpoints/epoch3"
-	instructiontokenizer = AutoTokenizer.from_pretrained(model_dir) 
+	try: 
+		instructiontokenizer = AutoTokenizer.from_pretrained(model_dir)
+	except:
+		model_dir = sys.argv[1] 
+		instructiontokenizer = AutoTokenizer.from_pretrained(model_dir)
 	instructionmodel = AutoModelForSeq2SeqLM.from_pretrained(model_dir)
 	kw_extractor = yake.KeywordExtractor(n=3)
 	print("Loaded......")

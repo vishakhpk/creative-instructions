@@ -58,6 +58,35 @@
 			op_text = op_text.concat(selectedOption.value);
 			document.getElementById("poemsofar").value = op_text;
 		}
+
+	function generateInstruction() {
+		// alert("In function");
+		// alert(document.getElementById('lang').value)var op_text = ""
+		var op_text = ""
+                for(let i=1; i<=4; i++) {
+                        var id_name = "poem_line_".concat(i)
+                        try  {  
+                             op_text = document.getElementById(id_name).innerText;
+                        }
+                        catch (error) {
+                                console.error(error);
+                                break;
+                                }
+                }
+		var last_sentence = op_text;
+		var last_word = last_sentence.split(" ").pop();
+		var inst = "Select options to modify instruction";
+		if (document.getElementById('lang').value == "about") {inst = "Write a poetic sentence that contains the word '"+document.getElementById('topic').value+"'" }
+		if (document.getElementById('lang').value == "startwithaword") {inst = "Write a poetic sentence that starts with the word '"+document.getElementById('startword').value+"'" }
+		if (document.getElementById('lang').value == "endwithaword") {inst = "Write a poetic sentence ending in '"+document.getElementById('endword').value+"'" }
+		if (document.getElementById('lang').value == "comp1") {inst = "Write a poetic sentence that contains the word '"+document.getElementById('topic').value+"' and ending in '"+document.getElementById('endword').value+"'" }
+		if (document.getElementById('lang').value == "comp2") {inst = "Write a poetic sentence that starts with the word '"+document.getElementById('startword').value+"' and ending in '"+document.getElementById('endword').value+"'" }
+		if (document.getElementById('lang').value == "suggest") {inst = "Write a next sentence in a poetry given the previous sentence '"+last_sentence+"'" }
+		if (document.getElementById('lang').value == "suggesttopic") {inst = "Write a next sentence in a poetry given the previous sentence '"+last_sentence+"'" }
+		if (document.getElementById('lang').value == "endwithrhyme") {inst = "Write a poetic sentence ending in a rhyme for '"+last_word+"'" }
+		if (document.getElementById('lang').value == "comp3") {inst =  "Write a poetic sentence that contains the word '"+document.getElementById('topic').value+"' and ending in a rhyme for '"+last_word+"'" }
+		document.getElementById('nlinstruction').value = inst;
+	}
 	</script>
 	<br>
 	<hr>
@@ -71,15 +100,24 @@
 
  	 <label for="lang">Choose an instruction:</label>
 	  <select id="lang" name="lang">
-	    <option value="about">Enter a topic</option>
-	    <option value="suggest">Suggest next sentence</option>
-	    <option value="suggesttopic">Suggest a topic for next sentence</option>
-	    <option value="endwithrhyme">Rhyme with previous sentence</option>
-	    <option value="endwithaword">Suggest next sentence ending with a custom word</option>
-	    <option value="startwithaword">Suggest next sentence starting with a custom word</option>
-	    <option value="comp1">Suggest next sentence with a specific topic and ending in a custom word</option>
-	    <option value="comp2">Suggest next sentence starting with a custom word and ending in a custom word</option>
-	    <option value="comp3">Suggest next sentence with a specific topic and rhyming with previous sentence</option>
+            <option value="about">Suggest a sentence about a topic</option>
+	    <!-- <option value="about">Enter a topic</option> -->
+            <option value="endwithaword">Suggest a sentence ending with a custom word</option>
+	    <!-- <option value="endwithaword">Suggest next sentence ending with a custom word</option> -->
+            <option value="startwithaword">Suggest a sentence starting with a custom word</option>
+	    <!-- <option value="startwithaword">Suggest next sentence starting with a custom word</option> -->
+            <option value="comp1">Suggest a sentence about a specific topic and ending in a custom word</option>
+	    <!-- <option value="comp1">Suggest next sentence with a specific topic and ending in a custom word</option> -->
+            <option value="comp2">Suggest a sentence starting with a custom word and ending in a custom word</option>
+	    <!-- <option value="comp2">Suggest next sentence starting with a custom word and ending in a custom word</option> -->
+            <option value="suggest">Suggest next sentence given what you've written so far</option>
+	    <!-- <option value="suggest">Suggest next sentence</option> -->
+            <option value="suggesttopic">Suggest a topic for next sentence given what you've written so far</option>
+	    <!-- <option value="suggesttopic">Suggest a topic for next sentence</option> -->
+            <option value="endwithrhyme">Rhyme with previously written sentence sentence</option>
+	    <!-- <option value="endwithrhyme">Rhyme with previous sentence</option> -->
+            <option value="comp3">Suggest a sentence with a specific topic and rhyming with previous sentence</option>
+	    <!-- <option value="comp3">Suggest next sentence with a specific topic and rhyming with previous sentence</option> -->
 	  </select>
 	  <br>
 	  <br>
@@ -95,6 +133,13 @@
 	    <label for="startword">Starting Word</label>
 	    <textarea name="startword" class="form-control" id="startword" rows="1" cols="10"></textarea>
 	    <br>
+
+            <button type="button" onclick="generateInstruction()">View Your Instruction</button>
+            <br>
+
+            <label for="nlinstruction">Your Instruction</label>
+            <textarea name="nlinstruction" class="form-control" id="nlinstruction" rows="1" cols="64">Hit the button above to edit your instruction in text</textarea>
+            <br>
 
 	    <button type="submit" class="btn btn-primary">Submit</button>
 
