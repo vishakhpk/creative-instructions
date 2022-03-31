@@ -21,7 +21,7 @@ def home():
 		startword = form["startword"]
 		endword = form["endword"]
 		lang = form["lang"]
-		rhymewithword = None # form["rhymewithword"]
+		rhymewithword = form["rhymewithword"]
 		nl_inst = form["nlinstruction"]
 		if nl_inst == "Hit the button above to edit your instruction in text":
 			nl_inst = None
@@ -29,19 +29,17 @@ def home():
 			poem_lines = form["poemsofar"].split('\n')
 		else:
 			poem_lines =  []
-			# poem_lines =  ["q", "w", "e"]
 		return render_template("instruction.html", poem=poem_lines, translation=get_translation(topic, startword, endword, rhymewithword, lang, poem_lines, nl_inst))
 
 	return render_template("index1.html", f='')
 
 def get_translation(topic, startword, endword, rhymewithword, lang, poemsofar, nl_inst):
-	if nl_inst is not None:
+	if nl_inst is not None and lang not in ['endwithrhyme','comp3','comp4']:
 		instruction = nl_inst
 		print(instruction)
 		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
 		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 5, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
 		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
-		# output = ["a", "b", "c", "d", "e"]
 		return output
 	if lang=="about":
 		print("Topic is ",topic)
@@ -50,7 +48,6 @@ def get_translation(topic, startword, endword, rhymewithword, lang, poemsofar, n
 		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
 		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 5, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
 		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
-		# output = ["a", "b", "c", "d", "e"]
 		return output
 	elif lang=="suggest":
 		last_sentence = poemsofar[-1]
