@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from flask_cors import CORS, cross_origin
 from transformers import AutoTokenizer,AutoModelForSeq2SeqLM, T5ForConditionalGeneration
 import os, sys,random
 import yake
@@ -10,17 +11,19 @@ import torch
 os.environ["CUDA_VISIBLE_DEVICES"]="2,3"
 import numpy as np
 app = Flask(__name__)
+CORS(app)
 instructionmodel = None
 instructiontokenizer = None
 
 @app.route("/", methods=["GET", "POST"])
+@cross_origin(origin="*")
 def home():
 	if (request.method == "POST"):
 		form = request.form
-		topic = form["topic"]
-		startword = form["startword"]
-		endword = form["endword"]
-		lang = form["lang"]
+		topic = None # form["topic"]
+		startword = None # form["startword"]
+		endword = None # form["endword"]
+		lang = None # form["lang"]
 		rhymewithword = form["rhymewithword"]
 		nl_inst = form["nlinstruction"]
 		if nl_inst == "Hit the button above to edit your instruction in text":
@@ -28,7 +31,7 @@ def home():
 		if "poemsofar" in form:
 			poem_lines = form["poemsofar"].split('\n')
 		else:
-			poem_lines =  []
+			poem_lines =  [] #['a', 'b']
 		return render_template("instruction.html", poem=poem_lines, translation=get_translation(topic, startword, endword, rhymewithword, lang, poem_lines, nl_inst))
 
 	return render_template("index1.html", f='')

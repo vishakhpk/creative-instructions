@@ -77,16 +77,26 @@
 		var last_sentence = poem_so_far.split("\n").pop();
 		var last_word = last_sentence.split(" ").pop();
 		var inst = "Select options to modify instruction";
-		if (document.getElementById('lang').value == "about") {inst = "Write a poetic sentence that contains the word '"+document.getElementById('topic').value+"'" }
-		if (document.getElementById('lang').value == "startwithaword") {inst = "Write a poetic sentence that starts with the word '"+document.getElementById('startword').value+"'" }
-		if (document.getElementById('lang').value == "endwithaword") {inst = "Write a poetic sentence ending in '"+document.getElementById('endword').value+"'" }
-		if (document.getElementById('lang').value == "comp1") {inst = "Write a poetic sentence that contains the word '"+document.getElementById('topic').value+"' and ending in '"+document.getElementById('endword').value+"'" }
-		if (document.getElementById('lang').value == "comp2") {inst = "Write a poetic sentence that starts with the word '"+document.getElementById('startword').value+"' and ending in '"+document.getElementById('endword').value+"'" }
-		if (document.getElementById('lang').value == "suggest") {inst = "Write a next sentence in a poetry given the previous sentence '"+last_sentence+"'" }
-		if (document.getElementById('lang').value == "suggesttopic") {inst = "Write a next sentence in a poetry given the previous sentence '"+last_sentence+"'" }
-		if (document.getElementById('lang').value == "endwithrhyme") {inst = "Write a poetic sentence ending in a rhyme for '"+last_word+"'" }
-		if (document.getElementById('lang').value == "comp3") {inst =  "Write a poetic sentence that contains the word '"+document.getElementById('topic').value+"' and ending in a rhyme for '"+last_word+"'" }
-		if (document.getElementById('lang').value == "comp4") {inst =  "Write a poetic sentence that contains the word '"+document.getElementById('topic').value+"' and ending in a rhyme for '"+document.getElementById('rhymewithword').value+"'" }
+		if (document.getElementById('about').checked) {inst = "Write a poetic sentence that contains the word ''" }
+		if (document.getElementById('startwithaword').checked) {inst = "Write a poetic sentence that starts with the word ''" }
+		if (document.getElementById('endwithaword').checked) {inst = "Write a poetic sentence ending in ''" }
+		if (document.getElementById('comp1').checked) {inst = "Write a poetic sentence that contains the word '' and ending in ''" }
+		if (document.getElementById('comp2').checked) {inst = "Write a poetic sentence that starts with the word '' and ending in ''" }
+		if (document.getElementById('suggest').checked) {inst = "Write a next sentence in a poetry given the previous sentence '"+last_sentence+"'" }
+		if (document.getElementById('topic').checked) {inst = "Write a next sentence in a poetry given the previous sentence '"+last_sentence+"'" }
+		if (document.getElementById('endwithrhyme').checked) {inst = "Write a poetic sentence ending in a rhyme for '"+last_word+"'" }
+		if (document.getElementById('comp3').checked) {inst =  "Write a poetic sentence that contains the word '' and ending in a rhyme for '"+last_word+"'" }
+		if (document.getElementById('comp4').checked) {inst =  "Write a poetic sentence that contains the word '' and ending in a rhyme for ''" }
+		// if (document.getElementById('lang').value == "about") {inst = "Write a poetic sentence that contains the word '"+document.getElementById('topic').value+"'" }
+		// if (document.getElementById('lang').value == "startwithaword") {inst = "Write a poetic sentence that starts with the word '"+document.getElementById('startword').value+"'" }
+		// if (document.getElementById('lang').value == "endwithaword") {inst = "Write a poetic sentence ending in '"+document.getElementById('endword').value+"'" }
+		// if (document.getElementById('lang').value == "comp1") {inst = "Write a poetic sentence that contains the word '"+document.getElementById('topic').value+"' and ending in '"+document.getElementById('endword').value+"'" }
+		// if (document.getElementById('lang').value == "comp2") {inst = "Write a poetic sentence that starts with the word '"+document.getElementById('startword').value+"' and ending in '"+document.getElementById('endword').value+"'" }
+		// if (document.getElementById('lang').value == "suggest") {inst = "Write a next sentence in a poetry given the previous sentence '"+last_sentence+"'" }
+		// if (document.getElementById('lang').value == "suggesttopic") {inst = "Write a next sentence in a poetry given the previous sentence '"+last_sentence+"'" }
+		// if (document.getElementById('lang').value == "endwithrhyme") {inst = "Write a poetic sentence ending in a rhyme for '"+last_word+"'" }
+		// if (document.getElementById('lang').value == "comp3") {inst =  "Write a poetic sentence that contains the word '"+document.getElementById('topic').value+"' and ending in a rhyme for '"+last_word+"'" }
+		// if (document.getElementById('lang').value == "comp4") {inst =  "Write a poetic sentence that contains the word '"+document.getElementById('topic').value+"' and ending in a rhyme for '"+document.getElementById('rhymewithword').value+"'" }
 		document.getElementById('nlinstruction').value = inst;
 	}
 	</script>
@@ -94,14 +104,14 @@
 	<hr>
 	<p class="lead center_div"><b>Try Again:</b></p>
 	<br>
-  <form action = "{{ url_for('home') }}" class="center_div" method="POST">
+  <form name="creative_instructions" action = "{{ url_for('home') }}" class="center_div" method="POST">
  	
  	  <label for="poemsofar">Poem so far</label>
 	    <textarea name="poemsofar" class="form-control" id="poemsofar" rows="4"></textarea>
 	    <br>
 
- 	 <label for="lang">Choose an instruction:</label>
-	  <select id="lang" name="lang">
+ 	 <label for="lang">Choose an instruction:</label><br>
+	 <!-- <select id="lang" name="lang">
             <option value="about">Suggest a sentence about a topic</option>
             <option value="endwithaword">Suggest a sentence ending with a custom word</option>
             <option value="startwithaword">Suggest a sentence starting with a custom word</option>
@@ -112,10 +122,28 @@
             <option value="endwithrhyme">Rhyme with previously written sentence sentence</option>
             <option value="comp3">Suggest a sentence with a specific topic and rhyming with previous sentence</option>
             <option value="comp4">Suggest a sentence with a specific topic and rhyming with a custom word</option>
-	  </select>
+	  </select> -->
+        <input type="radio" id="about" name="inst" value="about"><label for="about">Suggest a sentence about a topic</label><br>
+        <input type="radio" id="endwithaword" name="inst" value="endwithaword"><label for="endwithaword">Suggest a sentence ending with a custom word</label><br>
+        <input type="radio" id="startwithaword" name="inst" value="startwithaword"><label for="startwithaword">Suggest a sentence starting with a custom word</label><br>
+        <input type="radio" id="comp1" name="inst" value="comp1"><label for="comp1">Suggest a sentence about a specific topic and ending in a custom word</label><br>
+        <input type="radio" id="comp2" name="inst" value="comp2"><label for="comp2">Suggest a sentence starting with a custom word and ending in a custom word</label><br>
+        <input type="radio" id="suggest" name="inst" value="suggest"><label for="suggest">Suggest next sentence given what you've written so far</label><br>
+        <input type="radio" id="topic" name="inst" value="suggesttopic"><label for="suggesttopic">Suggest a topic for next sentence given what you've written so far</label><br>
+        <input type="radio" id="endwithrhyme" name="inst" value="endwithrhyme"><label for="endwithrhyme">Rhyme with previously written sentence sentence</label><br>
+        <input type="radio" id="comp3" name="inst" value="comp3"><label for="comp3">Suggest a sentence with a specific topic and rhyming with previous sentence</label><br>
+        <input type="radio" id="comp4" name="inst" value="comp4"><label for="comp4">Suggest a sentence with a specific topic and rhyming with a custom word</label><br>
+        <script>
+            for(var i = 0; i < 10; i++) {
+                document.creative_instructions.elements['inst'][i].onclick = function() {
+                    generateInstruction();
+                }
+            }
+        </script>
 	  <br>
 	  <br>
 
+            <!--
 		<label for="topic">Topic</label>
 	    <textarea name="topic" class="form-control" id="topic" rows="1" cols="10"></textarea>
 	    <br>
@@ -126,20 +154,32 @@
 
 	    <label for="startword">Starting Word</label>
 	    <textarea name="startword" class="form-control" id="startword" rows="1" cols="10"></textarea>
-	    <br>
+	    <br> -->
 
-	    <label for="rhymewithword">Rhyming Word</label>
-        <textarea name="rhymewithword" class="form-control" id="rhymewithword" rows="1" cols="10"></textarea>
+        <label for="rhymewithword">Find a rhyming word for: </label>
+        <textarea name="rhymewithword" class="form-control" id="RhymeBrainInput" rows="1" cols="10"></textarea>
+        <br>
+        
+        <div id='RhymeBrainResultDiv'></div><div style='clear:both'></div>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='external.js') }}"></script>
+        
+        <button type="button" onclick="javascript:RhymeBrainSubmit()">Find Rhyming Words</button> 
+        <script type="text/javascript">
+            var RhymeBrainMaxResults = 6;
+        </script>
+        <script type="text/javascript" src="{{ url_for('static', filename='external.js') }}"></script>
         <br>
 
+        <!--
             <button type="button" onclick="generateInstruction()">View Your Instruction</button>
             <br>
+        -->
+        <label for="nlinstruction">Your Instruction</label>
+        <textarea name="nlinstruction" class="form-control" id="nlinstruction" rows="1" cols="64">Hit the button above to edit your instruction in text</textarea>
+        <br>
 
-            <label for="nlinstruction">Your Instruction</label>
-            <textarea name="nlinstruction" class="form-control" id="nlinstruction" rows="1" cols="64">Hit the button above to edit your instruction in text</textarea>
-            <br>
-
-	    <button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary">Submit</button>
 
 	</form>
 	
