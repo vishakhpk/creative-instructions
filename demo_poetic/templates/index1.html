@@ -35,69 +35,32 @@
 
     <script>
 	function generateInstruction() {
-		// alert("In function");
-		// alert(document.getElementById('lang').value)
 		var inst = "Select options to modify instruction";
 		if (document.getElementById('about').checked) {inst = "Write a poetic sentence that contains the word ''" }
 		if (document.getElementById('startwithaword').checked) {inst = "Write a poetic sentence that starts with the word ''" }
 		if (document.getElementById('endwithaword').checked) {inst = "Write a poetic sentence ending in ''" }
 		if (document.getElementById('comp1').checked) {inst = "Write a poetic sentence that contains the word '' and ending in ''" }
 		if (document.getElementById('comp2').checked) {inst = "Write a poetic sentence that starts with the word '' and ending in ''"}
-		// if (document.getElementById('lang').value == "about") {inst = "Write a poetic sentence that contains the word '"+document.getElementById('topic').value+"'" }
-		// if (document.getElementById('lang').value == "startwithaword") {inst = "Write a poetic sentence that starts with the word '"+document.getElementById('startword').value+"'" }
-		// if (document.getElementById('lang').value == "endwithaword") {inst = "Write a poetic sentence ending in '"+document.getElementById('endword').value+"'" }
-		// if (document.getElementById('lang').value == "comp1") {inst = "Write a poetic sentence that contains the word '"+document.getElementById('topic').value+"' and ending in '"+document.getElementById('endword').value+"'" }
-		// if (document.getElementById('lang').value == "comp2") {inst = "Write a poetic sentence that starts with the word '"+document.getElementById('startword').value+"' and ending in '"+document.getElementById('endword').value+"'" }
 		document.getElementById('nlinstruction').value = inst;
 	}
     </script>
 
 
     <label for="lang">Choose an instruction:</label><br>
-      <!-- <select class="radioSelect" id="lang" name="lang">
-        <option value="about">Suggest a sentence about a topic</option>
-        <option value="endwithaword">Suggest a sentence ending with a custom word</option>
-        <option value="startwithaword">Suggest a sentence starting with a custom word</option>
-        <option value="comp1">Suggest a sentence about a specific topic and ending in a custom word</option>
-        <option value="comp2">Suggest a sentence starting with a custom word and ending in a custom word</option>
-        <option value="suggest">Suggest next sentence given what you've written so far</option>
-        <option value="suggesttopic">Suggest a topic for next sentence given what you've written so far</option>
-        <option value="endwithrhyme">Rhyme with previously written sentence sentence</option>
-        <option value="comp3">Suggest a sentence with a specific topic and rhyming with previous sentence</option>
-        <option value="comp4">Suggest a sentence with a specific topic and rhyming with a custom word</option>
-      </select> -->
         <input type="radio" id="about" name="inst" value="about"><label for="about"> Suggest a sentence about a topic</label><br>
         <input type="radio" id="endwithaword" name="inst" value="endwithaword"><label for="endwithaword"> Suggest a sentence ending with a custom word</label><br>
         <input type="radio" id="startwithaword" name="inst" value="startwithaword"><label for="startwithaword"> Suggest a sentence starting with a custom word</label><br>
         <input type="radio" id="comp1" name="inst" value="comp1"><label for="comp1"> Suggest a sentence about a specific topic and ending in a custom word</label><br>
         <input type="radio" id="comp2" name="inst" value="comp2"><label for="comp2"> Suggest a sentence starting with a custom word and ending in a custom word</label><br>
-        <!--- <input type="radio" id="suggest" name="inst" value="suggest"><label for="suggest"> Suggest next sentence given what you've written so far</label><br>
-        <input type="radio" id="topic" name="inst" value="suggesttopic"><label for="suggesttopic"> Suggest a topic for next sentence given what you've written so far</label><br>
-        <input type="radio" id="endwithrhyme" name="inst" value="endwithrhyme"><label for="endwithrhyme"> Rhyme with previously written sentence sentence</label><br>
-        <input type="radio" id="comp3" name="inst" value="comp3"><label for="comp3"> Suggest a sentence with a specific topic and rhyming with previous sentence</label><br>
-        <input type="radio" id="comp4" name="inst" value="comp4"><label for="comp4"> Suggest a sentence with a specific topic and rhyming with a custom word</label><br>
-            -->
       <br>
         <script>
-            for(var i = 0; i < 10; i++) {
+            for(var i = 0; i < 12; i++) {
                 document.creative_instructions.elements['inst'][i].onclick = function() {
                     generateInstruction();
                 }
             }
         </script>
       <br>
-        <!---
-        <label for="topic">Topic</label>
-        <textarea name="topic" class="form-control" id="topic" rows="1" cols="10"></textarea>
-        <br>
-
-        <label for="endword">Ending Word</label>
-        <textarea name="endword" class="form-control" id="endword" rows="1" cols="10"></textarea>
-        <br>
-
-        <label for="startword">Starting Word</label>
-        <textarea name="startword" class="form-control" id="startword" rows="1" cols="10"></textarea>
-        <br> -->
 
         <label for="rhymewithword">Find a rhyming word for: </label>
         <textarea name="rhymewithword" class="form-control" id="RhymeBrainInput" rows="1" cols="10"></textarea>
@@ -109,7 +72,7 @@
         
         <button type="button" onclick="javascript:RhymeBrainSubmit()">Find Rhyming Words</button> 
         <script type="text/javascript">
-            var RhymeBrainMaxResults = 6;
+            var RhymeBrainMaxResults = 15;
         </script>
         <script type="text/javascript" src="{{ url_for('static', filename='external.js') }}"></script>
         <br>
