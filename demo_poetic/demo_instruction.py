@@ -46,7 +46,6 @@ def get_translation(topic, startword, endword, rhymewithword, lang, poemsofar, n
 		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
 		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 10, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
 		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
-		output = list(set(output))
 		output.sort(key=len,reverse=True)
 		return output[0:5]
 	if lang=="suggesttopic":
