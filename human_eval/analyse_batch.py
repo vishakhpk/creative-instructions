@@ -6,7 +6,7 @@ fname = sys.argv[1]
 
 df = pd.read_csv(fname)
 print(df.head())
-df = df[["Input.instruction", "Input.text_1", "Input.text_2", "Answer.comparisonReason", "Answer.creative_1.Creative Verse 1", "Answer.creative_2.Creative Verse 2", "Answer.fluency_1", "Answer.fluency_2", "Answer.instruction_1_1.Creative Verse 1", "Answer.instruction_1_2.Creative Verse 2", "Answer.instruction_2_1.Creative Verse 1", "Answer.instruction_2_2.Creative Verse 2"]]
+df = df[["Input.instruction", "Input.text_1", "Input.text_2", "Answer.comparisonReason", "Answer.creative_1.Creative Verse 1", "Answer.creative_2.Creative Verse 2", "Answer.fluency_1", "Answer.fluency_2", "Answer.instruction_1_1.yes", "Answer.instruction_1_2.no", "Answer.instruction_2_1.yes", "Answer.instruction_2_2.no"]]
 print(df.head())
 df = df.to_dict(orient='records')
 
@@ -36,8 +36,8 @@ for key in items.keys():
             c1+=1
         fl1 += row["Answer.fluency_1"]
         fl2 += row["Answer.fluency_2"]
-        inst1 += int(row["Answer.instruction_1_1.Creative Verse 1"] == True)
-        inst2 += int(row["Answer.instruction_2_1.Creative Verse 1"] == True)
+        inst1 += int(row["Answer.instruction_1_1.yes"] == True)
+        inst2 += int(row["Answer.instruction_2_1.yes"] == True)
     # print(c1, fl1, fl2, inst1, inst2)
     if c1 >= 2:
         tot_c1.append(1)
