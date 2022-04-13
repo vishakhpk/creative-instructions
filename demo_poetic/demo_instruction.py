@@ -8,6 +8,7 @@ from wordfreq import zipf_frequency
 import re
 import sys
 import torch
+import json
 
 os.environ["CUDA_VISIBLE_DEVICES"]="2,3"
 import numpy as np
@@ -24,6 +25,8 @@ def home():
 		print(request.form)
 		if ('poem_submit' in form) and form["poem_submit"] == "poem_submit":
 	                print("Submitting Poem")
+	                with open(form["uid"]+".json", "w") as f:
+	                    f.write(json.dumps(form))
 	                return render_template("index1.html", f='')
 		topic = None # form["topic"]
 		startword = None # form["startword"]

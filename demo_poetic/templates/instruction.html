@@ -52,6 +52,7 @@
 	        {% for line in translation %}
 		    <p class="lead center_div"> <input type="radio" id="item_{{loop.index}}" name="model_output" value="{{line}}" onclick="handleClick(this);"> <label for="item_{{loop.index}}">{{line}}</label><br> </p>
 	        {% endfor %}
+                <script language="JavaScript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	        <script>
 	        function handleClick(selectedOption) {
 			// alert(selectedOption.value)
@@ -104,12 +105,24 @@
 		    if (document.getElementById('comp6').checked) {inst =  "Write a simile about ''" }
 		    document.getElementById('nlinstruction').value = inst;
 	        }
+
+                function get_uid(){
+                    var dt = new Date().getTime();
+                    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                    var r = (dt + Math.random()*16)%16 | 0;
+                    dt = Math.floor(dt/16);
+                    return (c=='x' ? r :(r&0x3|0x8)).toString(16);
+                    });
+                return uuid;
+                }
+
+
 	        </script>
 	        <br>
 	        <hr>
 	        <p class="lead center_div"><b>Write your poem here:</b></p>
 	        <br>
-                <form name="creative_instructions" action = "{{ url_for('home') }}" class="center_div" method="POST">
+                <form name="creative_instructions" action = "{{ url_for('home') }}" class="center_div" onsubmit="onSubmitForm()" method="POST">
  	
  	        <label for="poemsofar">Poem so far</label>
 	        <textarea name="poemsofar" class="form-control" id="poemsofar" rows="4"></textarea>
@@ -164,10 +177,18 @@
             <script type="text/javascript" src="{{ url_for('static', filename='external.js') }}"></script>
             <br>
 
+            <input type=hidden class="form-control" name="uid" id="uid" value="abc">
+
 	    </form>
             </div>
         </div>
-	
+        <script>
+                function onSubmitForm() {
+                        // alert("Submitting");
+                        var uid_element = document.getElementById("uid");
+                        uid_element.value = get_uid();
+                    }
+        </script>	
 	<footer id="sticky-footer" class="py-4 text-black-50">
         <div class="container text-center">
             <small>Copyright &copy; Created by Tuhin Chakrabarty & Vishakh Padmakumar</small>
