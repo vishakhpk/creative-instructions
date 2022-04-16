@@ -122,7 +122,7 @@
 	        <hr>
 	        <p class="lead center_div"><b>Write your poem here:</b></p>
 	        <br>
-                <form name="creative_instructions" action = "{{ url_for('home') }}" class="center_div" onsubmit="onSubmitForm()" method="POST">
+                <form name="creative_instructions" action = "{{ url_for('home') }}" class="center_div" onsubmit="return onSubmitForm()" method="POST">
  	
  	        <label for="poemsofar">Poem so far</label>
 	        <textarea name="poemsofar" class="form-control" id="poemsofar" rows="4"></textarea>
@@ -185,8 +185,17 @@
         <script>
                 function onSubmitForm() {
                         // alert("Submitting");
+                        var poem = document.getElementById("poemsofar").value;
+                        var count = poem.split(/\r\n|\r|\n/).length;
+                        if (count < 4) {
+                            alert("The poem needs to be at least 4 lines long. Current line count: "+count); return false;
+                        }
+                        if (poem.length < 80) {
+                            alert("The poem needs to be at least 80 characters long. Current character count: "+poem.length); return false;
+                        }
                         var uid_element = document.getElementById("uid");
                         uid_element.value = get_uid();
+                        alert("Success! Please enter this code into MTurk to complete the task - "+uid_element.value)
                     }
         </script>	
 	<footer id="sticky-footer" class="py-4 text-black-50">
