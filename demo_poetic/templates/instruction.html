@@ -54,6 +54,7 @@
 	        {% endfor %}
                 <script language="JavaScript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	        <script>
+                var clicked;
 	        function handleClick(selectedOption) {
 			// alert(selectedOption.value)
 			var op_text = ""
@@ -127,7 +128,7 @@
  	        <label for="poemsofar">Poem so far</label>
 	        <textarea name="poemsofar" class="form-control" id="poemsofar" rows="4"></textarea>
 	        <br>
-	        <button type="submit" class="form-control" name="poem_submit" value="poem_submit">Finish</button>
+	        <button type="submit" class="form-control" name="poem_submit" value="poem_submit" onclick="clicked='poem'">Finish</button>
             </div>
             <div class="column">
 
@@ -160,7 +161,7 @@
             <textarea name="nlinstruction" class="form-control" id="nlinstruction" rows="1" cols="64">Hit the button above to edit your instruction in text</textarea>
             <br>
 
-	    <button type="submit" class="form-control" name="poem_submit" value="instruction_submit">Submit</button>
+	    <button type="submit" class="form-control" name="poem_submit" value="instruction_submit" onclick="clicked='inst'">Submit</button>
 
             <label for="rhymewithword">Find a rhyming word for: </label>
             <textarea name="rhymewithword" class="form-control" id="RhymeBrainInput" rows="1" cols="10"></textarea>
@@ -185,6 +186,8 @@
         <script>
                 function onSubmitForm() {
                         // alert("Submitting");
+                        // alert(clicked);
+                        if (clicked == 'inst') {return true;}
                         var poem = document.getElementById("poemsofar").value;
                         var count = poem.split(/\r\n|\r|\n/).length;
                         if (count < 4) {
