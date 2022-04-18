@@ -69,13 +69,13 @@ def get_translation(topic, startword, endword, rhymewithword, lang, poemsofar, n
 	if lang=="endwithrhyme":
 		last_word = nl_inst.replace("'",'').split('ending in a rhyme for ')[1].rstrip()
 		x = [(zipf_frequency(elem,'en'),elem) for elem in pronouncing.rhymes(last_word) if len(elem)>=3 and zipf_frequency(elem,'en')>=3.0 and '.' not in elem and '-' not in elem]
-		sorted(x,reverse=True)
-
+		x = sorted(x,reverse=True)
+		arr = []
 		for i in range(0,min(15,len(x))):
-			tokens = nlp(rhymewithword+' '+x[i][1])
+			tokens = nlp(last_word+' '+x[i][1])
 			sim = tokens[0].similarity(tokens[1])
 			arr.append((sim,x[i][1]))
-		sorted(arr,reverse=True)
+		arr = sorted(arr,reverse=True)
 		print("Topic is ",topic)
 		inst = []
 		for i in range(0,min(5,len(arr))):
@@ -96,12 +96,13 @@ def get_translation(topic, startword, endword, rhymewithword, lang, poemsofar, n
 		last_word = nl_inst.replace("'",'').split('ending in a rhyme for ')[1].rstrip()
 		topic = nl_inst.replace("'",'').split('Write a poetic sentence that contains the word ')[1].split(' and ending')[0]
 		x = [(zipf_frequency(elem,'en'),elem) for elem in pronouncing.rhymes(last_word) if len(elem)>=3 and zipf_frequency(elem,'en')>=3.0 and '.' not in elem and '-' not in elem]
-		sorted(x,reverse=True)
+		x = sorted(x,reverse=True)
+		arr = []
 		for i in range(0,min(15,len(x))):
-			tokens = nlp(rhymewithword+' '+x[i][1])
+			tokens = nlp(last_word+' '+x[i][1])
 			sim = tokens[0].similarity(tokens[1])
 			arr.append((sim,x[i][1]))
-		sorted(arr,reverse=True)
+		arr = sorted(arr,reverse=True)
 		print("Topic is ",topic)
 		inst = []
 		for i in range(0,min(5,len(arr))):
@@ -110,7 +111,7 @@ def get_translation(topic, startword, endword, rhymewithword, lang, poemsofar, n
 			inst.append(instruction)
 			inst.append(instruction)
 		while len(inst)<10:
-			inst.append(instruction)
+			inst.append(inst[-1])
 		print(inst)
 		inputs = instructiontokenizer(inst, padding=True, return_tensors="pt").input_ids
 		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 10, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
@@ -122,24 +123,23 @@ def get_translation(topic, startword, endword, rhymewithword, lang, poemsofar, n
 		rhymewithword = nl_inst.replace("'",'').split('ending in a rhyme for ')[1].rstrip()
 		topic = nl_inst.replace("'",'').split('Write a poetic sentence that contains the word ')[1].split(' and ending')[0]
 		x = [(zipf_frequency(elem,'en'),elem) for elem in pronouncing.rhymes(rhymewithword) if len(elem)>=3 and zipf_frequency(elem,'en')>=3.0 and '.' not in elem and '-' not in elem]
-		sorted(x,reverse=True)
+		x = sorted(x,reverse=True)
 		arr = []
 		last_word = ''
 		for i in range(0,min(15,len(x))):
 			tokens = nlp(rhymewithword+' '+x[i][1])
 			sim = tokens[0].similarity(tokens[1])
 			arr.append((sim,x[i][1]))
-		sorted(arr,reverse=True)
-
-		print("Topic is ",topic)
+		arr = sorted(arr,reverse=True)
 		inst = []
 		for i in range(0,min(5,len(arr))):
 			last_word = arr[i][1]
 			instruction = random.choice(["Write a poetic sentence that contains the word '"+topic+"' and ending in '"+last_word+"'", "Write a poetic sentence that includes the word '"+topic+"' and ending in '"+last_word+"'", "Write a poetic sentence about '"+topic+"' and ending in '"+last_word+"'"])
 			inst.append(instruction)
 			inst.append(instruction)
+		print(inst,len(inst))
 		while len(inst)<10:
-			inst.append(instruction)
+			inst.append(inst[-1])
 		inputs = instructiontokenizer(inst, padding=True,return_tensors="pt").input_ids
 		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 1, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
 		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
