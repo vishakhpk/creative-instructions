@@ -10,13 +10,15 @@ import re
 import sys
 import torch
 import json
+import spacy
+os.environ["CUDA_VISIBLE_DEVICES"]="0,1"
 
-os.environ["CUDA_VISIBLE_DEVICES"]="2,3"
 import numpy as np
 app = Flask(__name__)
 CORS(app)
 instructionmodel = None
 instructiontokenizer = None
+nlp = None
 
 @app.route("/", methods=["GET", "POST"])
 @cross_origin(origin="*")
@@ -55,7 +57,6 @@ def home():
 
 def get_translation(topic, startword, endword, rhymewithword, lang, poemsofar, nl_inst):
 	print("NLinst",nl_inst)
-	# return ['a', 'b', 'c', 'd', 'e']
 	if (nl_inst is not None) and (lang not in ['endwithrhyme','comp3','comp4','suggesttopic']):
 		instruction = nl_inst
 		print("I AM HERE......")
@@ -76,24 +77,51 @@ def get_translation(topic, startword, endword, rhymewithword, lang, poemsofar, n
 	if lang=="endwithrhyme":
 		last_word = nl_inst.replace("'",'').split('ending in a rhyme for ')[1].rstrip()
 		x = [(zipf_frequency(elem,'en'),elem) for elem in pronouncing.rhymes(last_word) if len(elem)>=3 and zipf_frequency(elem,'en')>=3.0 and '.' not in elem and '-' not in elem]
-		sorted(x,reverse=True)
-		last_word = random.choice(x[0:15])[1]
-		instruction = random.choice(["Write a poetic sentence ending in '"+last_word+"'","Generate a poetic sentence ending in '"+last_word+"'"])
-		print(instruction)
-		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
-		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 5, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
+		x = sorted(x,reverse=True)
+		arr = []
+		for i in range(0,min(15,len(x))):
+			tokens = nlp(last_word+' '+x[i][1])
+			sim = tokens[0].similarity(tokens[1])
+			arr.append((sim,x[i][1]))
+		arr = sorted(arr,reverse=True)
+		print("Topic is ",topic)
+		inst = []
+		for i in range(0,min(5,len(arr))):
+			last_word = arr[i][1]
+			instruction = random.choice(["Write a poetic sentence ending in '"+last_word+"'","Generate a poetic sentence ending in '"+last_word+"'"])
+			inst.append(instruction)
+			inst.append(instruction)
+		while len(inst)<10:
+			inst.append(instruction)
+		print(inst)
+		inputs = instructiontokenizer(inst, padding=True,return_tensors="pt").input_ids
+		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 10, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
 		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
+		output.sort(key=len,reverse=True)
+		return output[0:5]
 		return output
 	if lang=='comp3':
 		last_word = nl_inst.replace("'",'').split('ending in a rhyme for ')[1].rstrip()
 		topic = nl_inst.replace("'",'').split('Write a poetic sentence that contains the word ')[1].split(' and ending')[0]
 		x = [(zipf_frequency(elem,'en'),elem) for elem in pronouncing.rhymes(last_word) if len(elem)>=3 and zipf_frequency(elem,'en')>=3.0 and '.' not in elem and '-' not in elem]
-		sorted(x,reverse=True)
-		last_word = random.choice(x[0:15])[1]
+		x = sorted(x,reverse=True)
+		arr = []
+		for i in range(0,min(15,len(x))):
+			tokens = nlp(last_word+' '+x[i][1])
+			sim = tokens[0].similarity(tokens[1])
+			arr.append((sim,x[i][1]))
+		arr = sorted(arr,reverse=True)
 		print("Topic is ",topic)
-		instruction = random.choice(["Write a poetic sentence that contains the word '"+topic+"' and ending in '"+last_word+"'", "Write a poetic sentence that includes the word '"+topic+"' and ending in '"+last_word+"'", "Write a poetic sentence about '"+topic+"' and ending in '"+last_word+"'"])
-		print(instruction)
-		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
+		inst = []
+		for i in range(0,min(5,len(arr))):
+			last_word = arr[i][1]
+			instruction = random.choice(["Write a poetic sentence that contains the word '"+topic+"' and ending in '"+last_word+"'", "Write a poetic sentence that includes the word '"+topic+"' and ending in '"+last_word+"'", "Write a poetic sentence about '"+topic+"' and ending in '"+last_word+"'"])
+			inst.append(instruction)
+			inst.append(instruction)
+		while len(inst)<10:
+			inst.append(inst[-1])
+		print(inst)
+		inputs = instructiontokenizer(inst, padding=True, return_tensors="pt").input_ids
 		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 10, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
 		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
 		output.sort(key=len,reverse=True)
@@ -103,17 +131,28 @@ def get_translation(topic, startword, endword, rhymewithword, lang, poemsofar, n
 		rhymewithword = nl_inst.replace("'",'').split('ending in a rhyme for ')[1].rstrip()
 		topic = nl_inst.replace("'",'').split('Write a poetic sentence that contains the word ')[1].split(' and ending')[0]
 		x = [(zipf_frequency(elem,'en'),elem) for elem in pronouncing.rhymes(rhymewithword) if len(elem)>=3 and zipf_frequency(elem,'en')>=3.0 and '.' not in elem and '-' not in elem]
-		sorted(x,reverse=True)
-		last_word = random.choice(x[0:15])[1]
-		print("Topic is ",topic)
-		instruction = random.choice(["Write a poetic sentence that contains the word '"+topic+"' and ending in '"+last_word+"'", "Write a poetic sentence that includes the word '"+topic+"' and ending in '"+last_word+"'", "Write a poetic sentence about '"+topic+"' and ending in '"+last_word+"'"])
-		print(instruction)
-		inputs = instructiontokenizer(instruction, return_tensors="pt").input_ids
-		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 10, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
+		x = sorted(x,reverse=True)
+		arr = []
+		last_word = ''
+		for i in range(0,min(15,len(x))):
+			tokens = nlp(rhymewithword+' '+x[i][1])
+			sim = tokens[0].similarity(tokens[1])
+			arr.append((sim,x[i][1]))
+		arr = sorted(arr,reverse=True)
+		inst = []
+		for i in range(0,min(5,len(arr))):
+			last_word = arr[i][1]
+			instruction = random.choice(["Write a poetic sentence that contains the word '"+topic+"' and ending in '"+last_word+"'", "Write a poetic sentence that includes the word '"+topic+"' and ending in '"+last_word+"'", "Write a poetic sentence about '"+topic+"' and ending in '"+last_word+"'"])
+			inst.append(instruction)
+			inst.append(instruction)
+		print(inst,len(inst))
+		while len(inst)<10:
+			inst.append(inst[-1])
+		inputs = instructiontokenizer(inst, padding=True,return_tensors="pt").input_ids
+		sample_outputs = instructionmodel.generate(input_ids=inputs.cuda(), no_repeat_ngram_size=2, num_return_sequences = 1, do_sample=True, max_length=64, top_k=5,temperature=0.7,eos_token_id=instructiontokenizer.eos_token_id)
 		output = instructiontokenizer.batch_decode(sample_outputs, skip_special_tokens=True)
 		output.sort(key=len,reverse=True)
 		return output[0:5]
-		return output
 
 if __name__ == '__main__':
 	model_dir = "/mnt/nlp_swordfish/tuhin/poetryT511bcheckpoints/epoch3"
@@ -127,4 +166,5 @@ if __name__ == '__main__':
 	print("Loaded......")
 	if torch.cuda.is_available() and torch.cuda.device_count() > 1:
 		instructionmodel.parallelize()
+		nlp = spacy.load('en_core_web_md')
 	app.run(host='0.0.0.0',port=8056, debug=False)
