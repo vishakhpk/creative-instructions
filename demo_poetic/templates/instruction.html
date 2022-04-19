@@ -179,6 +179,8 @@
             <br>
 
             <input type=hidden class="form-control" name="uid" id="uid" value="abc">
+            <input type=hidden class="form-control" name="current_inst" id="current_inst" value="{{instruction}}:{{translation}}">
+            <input type=hidden class="form-control" name="logs" id="logs" value="{{logs}}">
 
 	    </form>
             </div>
@@ -187,6 +189,7 @@
                 function onSubmitForm() {
                         // alert("Submitting");
                         // alert(clicked);
+                        // alert(logs)
                         if (clicked == 'inst') {return true;}
                         var poem = document.getElementById("poemsofar").value;
                         var count = poem.split(/\r\n|\r|\n/).length;

@@ -3,6 +3,7 @@ from flask_cors import CORS, cross_origin
 from transformers import AutoTokenizer,AutoModelForSeq2SeqLM, T5ForConditionalGeneration
 import os, sys,random
 import yake
+import ast
 import pronouncing
 from wordfreq import zipf_frequency
 import re
@@ -41,7 +42,14 @@ def home():
 			poem_lines = form["poemsofar"].split('\n')
 		else:
 			poem_lines =  [] # ['a', 'b']
-		return render_template("instruction.html", poem=poem_lines, translation=get_translation(topic, startword, endword, rhymewithword, lang, poem_lines, nl_inst))
+		translation = get_translation(topic, startword, endword, rhymewithword, lang, poem_lines, nl_inst)
+		if ('logs' not in form):
+	                logs = []
+		else:
+	                logs = ast.literal_eval(form['logs'])
+		logs.append({'instruction':nl_inst, 'output':translation}) 
+		# return render_template("instruction.html", poem=poem_lines, translation=get_translation(topic, startword, endword, rhymewithword, lang, poem_lines, nl_inst), instruction=nl_inst)
+		return render_template("instruction.html", poem=poem_lines, translation=translation, instruction=nl_inst, logs=logs)
 
 	return render_template("index1.html", f='')
 
