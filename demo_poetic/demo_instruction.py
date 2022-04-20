@@ -50,13 +50,18 @@ def home():
 		else:
 	                logs = ast.literal_eval(form['logs'])
 		logs.append({'instruction':nl_inst, 'output':translation}) 
+		if ('poemtitle' not in form):
+	                poemtitle=''
+		else:
+	                poemtitle=form['poemtitle']
 		# return render_template("instruction.html", poem=poem_lines, translation=get_translation(topic, startword, endword, rhymewithword, lang, poem_lines, nl_inst), instruction=nl_inst)
-		return render_template("instruction.html", poem=poem_lines, translation=translation, instruction=nl_inst, logs=logs)
+		return render_template("instruction.html", poem=poem_lines, translation=translation, instruction=nl_inst, logs=logs, poemtitle=poemtitle)
 
 	return render_template("index1.html", f='')
 
 def get_translation(topic, startword, endword, rhymewithword, lang, poemsofar, nl_inst):
 	print("NLinst",nl_inst)
+	# return ["a", "b", "c", "d", "e"]
 	if (nl_inst is not None) and (lang not in ['endwithrhyme','comp3','comp4','suggesttopic']):
 		instruction = nl_inst
 		print("I AM HERE......")

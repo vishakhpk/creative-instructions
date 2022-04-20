@@ -128,6 +128,9 @@
  	        <label for="poemsofar">Poem so far</label>
 	        <textarea name="poemsofar" class="form-control" id="poemsofar" rows="4"></textarea>
 	        <br>
+ 	        <label for="poemtitle">Poem Title</label>
+	        <textarea name="poemtitle" class="form-control" id="poemtitle" rows="1">{{poemtitle}}</textarea>
+	        <br>
 	        <button type="submit" class="form-control" name="poem_submit" value="poem_submit" onclick="clicked='poem'">Finish</button>
             </div>
             <div class="column">
@@ -198,6 +201,10 @@
                         }
                         if (poem.length < 80) {
                             alert("The poem needs to be at least 80 characters long. Current character count: "+poem.length); return false;
+                        }
+                        var title = document.getElementById("poemtitle").value;
+                        if (title.length < 3) {
+                            alert("The poem title needs to be at least 3 characters long. Current length: "+title.length); return false;
                         }
                         var uid_element = document.getElementById("uid");
                         uid_element.value = get_uid();
