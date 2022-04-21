@@ -10,7 +10,7 @@ import re
 import sys
 import torch
 import json
-import spacy
+# import spacy
 os.environ["CUDA_VISIBLE_DEVICES"]="0,1"
 
 import numpy as np
@@ -47,15 +47,18 @@ def home():
 		translation = get_translation(topic, startword, endword, rhymewithword, lang, poem_lines, nl_inst)
 		if ('logs' not in form):
 	                logs = []
+	                instruction_count = 0
 		else:
 	                logs = ast.literal_eval(form['logs'])
+	                instruction_count = len(logs)
 		logs.append({'instruction':nl_inst, 'output':translation}) 
+		instruction_count+=1 
 		if ('poemtitle' not in form):
 	                poemtitle=''
 		else:
 	                poemtitle=form['poemtitle']
 		# return render_template("instruction.html", poem=poem_lines, translation=get_translation(topic, startword, endword, rhymewithword, lang, poem_lines, nl_inst), instruction=nl_inst)
-		return render_template("instruction.html", poem=poem_lines, translation=translation, instruction=nl_inst, logs=logs, poemtitle=poemtitle)
+		return render_template("instruction.html", poem=poem_lines, translation=translation, instruction=nl_inst, instruction_count=instruction_count, logs=logs, poemtitle=poemtitle)
 
 	return render_template("index1.html", f='')
 

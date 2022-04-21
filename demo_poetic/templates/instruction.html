@@ -10,7 +10,7 @@
 	<style>
                 body {
             	background-image: url('../static/neruda.jpeg');
-            	background-size: 20%;
+            	background-size: 5%;
             	background-repeat: no-repeat;
             	background-position: bottom -50px left 7px;
 		background-attachment: inherit;
@@ -184,6 +184,7 @@
             <input type=hidden class="form-control" name="uid" id="uid" value="abc">
             <input type=hidden class="form-control" name="current_inst" id="current_inst" value="{{instruction}}:{{translation}}">
             <input type=hidden class="form-control" name="logs" id="logs" value="{{logs}}">
+            <input type=hidden class="form-control" name="instruction_count" id="instruction_count" value="{{instruction_count}}">
 
 	    </form>
             </div>
@@ -193,7 +194,16 @@
                         // alert("Submitting");
                         // alert(clicked);
                         // alert(logs)
-                        if (clicked == 'inst') {return true;}
+                        if (clicked == 'inst') {
+                            var instruction = document.getElementById("nlinstruction").value;
+                            // alert(instruction);
+                            // alert(instruction.includes("''"))
+                            if (instruction.includes("''")) {
+                                alert("You need to edit the template of the instruction, fill in the quotation marks i.e. ''");
+                                return false;
+                            }
+                            else { return true; }
+                        }
                         var poem = document.getElementById("poemsofar").value;
                         var count = poem.split(/\r\n|\r|\n/).length;
                         if (count < 4) {
@@ -205,6 +215,11 @@
                         var title = document.getElementById("poemtitle").value;
                         if (title.length < 3) {
                             alert("The poem title needs to be at least 3 characters long. Current length: "+title.length); return false;
+                        }
+                        var inst_count = document.getElementById("instruction_count").value;
+                        // alert(inst_count)
+                        if (inst_count < 4) {
+                            alert("You need to request at least 4 instructions from the model, one per line. Current count: "+inst_count); return false;
                         }
                         var uid_element = document.getElementById("uid");
                         uid_element.value = get_uid();
