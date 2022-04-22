@@ -196,19 +196,36 @@
                         // alert(logs)
                         if (clicked == 'inst') {
                             var instruction = document.getElementById("nlinstruction").value;
-                            // alert(instruction);
-                            // alert(instruction.includes("''"))
-                            if (instruction.includes("''")) {
+        			        if (instruction.includes("''")) {
                                 alert("You need to edit the template of the instruction, fill in the quotation marks i.e. ''");
                                 return false;
                             }
-                            else { return true; }
+                            if ((instruction.includes("''")==false) && (instruction.includes("'")==false)) {
+                               alert("Please do not erase quotation marks as it guides the model to understand better.");
+                               return false;
+                            }
+                            if ((instruction.startsWith("Write")==false) && (instruction.startsWith("Generate")==false)) {
+                               alert("Do not erase all the text from the instruction")
+                               return false;
+                            }
+                            return true;
                         }
                         var poem = document.getElementById("poemsofar").value;
                         var count = poem.split(/\r\n|\r|\n/).length;
                         if (count < 4) {
                             alert("The poem needs to be at least 4 lines long. Current line count: "+count); return false;
                         }
+                        var splpoem = poem.split(/\r\n|\r|\n/);
+                        for (var x in splpoem)
+                        {
+                            if (splpoem[x].split(" ").length<=3)
+                            {
+                                alert("One of your sentences is very short (less than 4 words). Please edit it to make it a full sentence with more than 3 words")
+                                return false;
+
+                            }
+                        }
+
                         if (poem.length < 80) {
                             alert("The poem needs to be at least 80 characters long. Current character count: "+poem.length); return false;
                         }
