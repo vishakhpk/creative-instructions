@@ -10,7 +10,7 @@ import re
 import sys
 import torch
 import json
-import spacy
+# import spacy
 os.environ["CUDA_VISIBLE_DEVICES"]="0,1"
 
 import numpy as np
@@ -46,6 +46,8 @@ def home():
 		else:
 			poem_lines =  [] # ['a', 'b']
 		translation = get_translation(topic, startword, endword, rhymewithword, lang, poem_lines, nl_inst)
+		translation.append("None of the above")
+		print(translation)
 		if ('logs' not in form):
 	                logs = []
 	                instruction_count = 0
@@ -67,6 +69,7 @@ def home():
 
 def get_translation(topic, startword, endword, rhymewithword, lang, poemsofar, nl_inst):
 	print("NLinst",nl_inst)
+	# return ["abc", "b", "c", "d", "e"] 
 	if (nl_inst is not None) and (lang not in ['endwithrhyme','comp3','comp4','suggesttopic']):
 		instruction = nl_inst
 		print("I AM HERE......")

@@ -71,7 +71,12 @@
 				}
 				// alert(op_text)
 			}
-			op_text = op_text.concat(selectedOption.value);
+                        if (selectedOption.value == "None of the above") {
+                        }
+                        else {
+			    op_text = op_text.concat(selectedOption.value);
+                        }
+                        op_text = op_text.trim()
 			document.getElementById("poemsofar").value = op_text;
 		}
 
@@ -88,7 +93,7 @@
                                 }
                     }
 		    var poem_so_far = document.getElementById("poemsofar").value;
-		    var last_sentence = poem_so_far.split("\n").pop();
+		    var last_sentence = poem_so_far.split("\n")[poem_so_far.split("\n").length - 1];
 		    var last_word = last_sentence.split(" ").pop();
 		    last_word = last_word.replace('.','').replace(';','').replace(',','')
 		    var inst = "Select options to modify instruction";
@@ -99,7 +104,7 @@
 		    if (document.getElementById('comp2').checked) {inst = "Write a poetic sentence that starts with the word '' and ending in ''" }
 		    if (document.getElementById('suggest').checked) {inst = "Write a next sentence in a poetry given the previous sentence '"+last_sentence+"'" }
 		    if (document.getElementById('topic').checked) {inst = "Write a next sentence in a poetry given the previous sentence '"+last_sentence+"'" }
-		    if (document.getElementById('endwithrhyme').checked) {inst = "Write a poetic sentence ending in a rhyme for '"+last_word+"'" }
+		    // if (document.getElementById('endwithrhyme').checked) {inst = "Write a poetic sentence ending in a rhyme for '"+last_word+"'" }
 		    if (document.getElementById('comp3').checked) {inst =  "Write a poetic sentence that contains the word '' and ending in a rhyme for '"+last_word+"'" }
 		    if (document.getElementById('comp4').checked) {inst =  "Write a poetic sentence that contains the word '' and ending in a rhyme for ''" }
 		    if (document.getElementById('comp5').checked) {inst =  "Write a metaphor about ''" }
@@ -136,21 +141,24 @@
             <div class="column">
 
 	        <p class="lead center_div"><b>Tools:</b></p>
-	        <br>
 
- 	        <label for="lang">Choose an instruction template:</label><br>
-                <input type="radio" id="about" name="inst" value="about"><label for="about">Suggest a sentence about a topic</label><br>
-                <input type="radio" id="endwithaword" name="inst" value="endwithaword"><label for="endwithaword">Suggest a sentence ending with a custom word</label><br>
-                <input type="radio" id="startwithaword" name="inst" value="startwithaword"><label for="startwithaword">Suggest a sentence starting with a custom word</label><br>
-                <input type="radio" id="comp1" name="inst" value="comp1"><label for="comp1">Suggest a sentence about a specific topic and ending in a custom word</label><br>
-                <input type="radio" id="comp2" name="inst" value="comp2"><label for="comp2">Suggest a sentence starting with a custom word and ending in a custom word</label><br>
-                <input type="radio" id="suggest" name="inst" value="suggest"><label for="suggest">Suggest next sentence given what you've written so far</label><br>
-                <input type="radio" id="topic" name="inst" value="suggesttopic"><label for="suggesttopic">Suggest a topic for next sentence given what you've written so far</label><br>
-                <input type="radio" id="endwithrhyme" name="inst" value="endwithrhyme"><label for="endwithrhyme">Rhyme with previously written sentence</label><br>
-                <input type="radio" id="comp3" name="inst" value="comp3"><label for="comp3">Suggest a sentence with a specific topic and rhyming with previous sentence</label><br>
-                <input type="radio" id="comp4" name="inst" value="comp4"><label for="comp4">Suggest a sentence with a specific topic and rhyming with a custom word</label><br>
-                <input type="radio" id="comp5" name="inst" value="comp5"><label for="comp5">Suggest a metaphor about a specific topic</label><br>
-                <input type="radio" id="comp6" name="inst" value="comp6"><label for="comp6">Suggest a simile about a specific topic</label><br>
+ 	        <label for="lang">Choose an instruction template or write one below:</label><br>
+                <b> Suggest sentences about a topic: </b><br>
+                <input type="radio" id="about" name="inst" value="about"><label for="about"> Suggest a sentence about a topic</label><br>
+                <input type="radio" id="endwithaword" name="inst" value="endwithaword"><label for="endwithaword"> Suggest a sentence ending with a custom word</label><br>
+                <input type="radio" id="startwithaword" name="inst" value="startwithaword"><label for="startwithaword"> Suggest a sentence starting with a custom word</label><br>
+                <input type="radio" id="comp1" name="inst" value="comp1"><label for="comp1"> Suggest a sentence about a specific topic and ending in a custom word</label><br>
+                <input type="radio" id="comp2" name="inst" value="comp2"><label for="comp2"> Suggest a sentence starting with a custom word and ending in a custom word</label><br>
+                <b> Suggesting the next sentence: </b><br>
+                <input type="radio" id="suggest" name="inst" value="suggest"><label for="suggest"> Suggest next sentence given what you've written so far</label><br>
+                <input type="radio" id="topic" name="inst" value="suggesttopic"><label for="suggesttopic"> Suggest a topic for next sentence given what you've written so far</label><br>
+                <b> Suggest a rhyming sentence: </b><br>
+                <!--- <input type="radio" id="endwithrhyme" name="inst" value="endwithrhyme"><label for="endwithrhyme">Rhyme with previously written sentence</label><br> --->
+                <input type="radio" id="comp3" name="inst" value="comp3"><label for="comp3"> Suggest a sentence with a specific topic and rhyming with previous sentence</label><br>
+                <input type="radio" id="comp4" name="inst" value="comp4"><label for="comp4"> Suggest a sentence with a specific topic and rhyming with a custom word</label><br>
+                <b> Suggest a simile or metaphor: </b><br>
+                <input type="radio" id="comp5" name="inst" value="comp5"><label for="comp5"> Suggest a metaphor about a specific topic</label><br>
+                <input type="radio" id="comp6" name="inst" value="comp6"><label for="comp6"> Suggest a simile about a specific topic</label><br>
             <script>
             for(var i = 0; i < 12; i++) {
                 document.creative_instructions.elements['inst'][i].onclick = function() {
@@ -164,7 +172,7 @@
             <textarea name="nlinstruction" class="form-control" id="nlinstruction" rows="1" cols="64">Hit the button above to edit your instruction in text</textarea>
             <br>
 
-	    <button type="submit" class="form-control" name="poem_submit" value="instruction_submit" onclick="clicked='inst'">Submit</button>
+	    <button type="submit" class="form-control" name="poem_submit" value="instruction_submit" onclick="clicked='inst'"> Submit</button>
 
             <label for="rhymewithword">Find a rhyming word for: </label>
             <textarea name="rhymewithword" class="form-control" id="RhymeBrainInput" rows="1" cols="10"></textarea>
