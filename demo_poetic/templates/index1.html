@@ -26,14 +26,14 @@
 <body>
     <br>
     <h1><i>CoPoet: Collaborative Poetry Writing with Instructions</i></h1> <br>
-   
-    <form name="creative_instructions" action = "{{ url_for('home') }}" class="center_div" method="POST">
+    <form name="creative_instructions" action = "{{ url_for('home') }}" class="center_div" onsubmit="return onSubmitForm()" method="POST">
 
   <!--    <label for="poemsofar">Topic</label>
         <textarea name="poemsofar" class="form-control" id="poemsofar" rows="3"></textarea>
         <br> -->
 
     <script>
+	var clicked;
 	function generateInstruction() {
 		var inst = "Select options to modify instruction";
 		if (document.getElementById('about').checked) {inst = "Write a poetic sentence that contains the word ''" }
@@ -81,9 +81,29 @@
         <textarea name="nlinstruction" class="form-control" id="nlinstruction" rows="1" cols="64">Select a template or type an instruction from scratch</textarea>
         <br>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" onclick="clicked='inst'">Submit</button>
     </form>
   
+    <script>
+                function onSubmitForm() {
+                    var instruction = document.getElementById("nlinstruction").value;
+                    if (instruction.includes("''")) {
+				        alert("You need to edit the template of the instruction, fill in the quotation marks i.e. ''");
+				        return false;
+					}
+			        if ((instruction.includes("''")==false) && (instruction.includes("'")==false)) {
+					   alert("Please do not erase quotation marks as it guides the model to understand better.");
+					   return false;
+					}
+			        if ((instruction.startsWith("Write")==false) && (instruction.startsWith("Generate")==false)) {
+					   alert("Do not erase all the text from the instruction")
+					   return false;
+					}
+			        return true;
+		}
+   </script>
+
+
    <footer id="sticky-footer" class="py-4 text-black-50">
         <div class="container text-center">
             <small>Copyright &copy; Created by Tuhin Chakrabarty & Vishakh Padmakumar</small>
