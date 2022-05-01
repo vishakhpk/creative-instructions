@@ -121,8 +121,7 @@
                     });
                 return uuid;
                 }
-
-
+                
 	        </script>
 	        <br>
 	        <hr>
@@ -131,7 +130,7 @@
                 <form name="creative_instructions" action = "{{ url_for('home') }}" class="center_div" onsubmit="return onSubmitForm()" method="POST">
  	
  	        <label for="poemsofar">Poem so far</label>
-	        <textarea name="poemsofar" class="form-control" id="poemsofar" rows="4"></textarea>
+	        <textarea name="poemsofar" class="form-control" id="poemsofar" rows="4">{{ poem|join("\n") }}</textarea>
 	        <br>
  	        <label for="poemtitle">Poem Title</label>
 	        <textarea name="poemtitle" class="form-control" id="poemtitle" rows="1">{{poemtitle}}</textarea>
