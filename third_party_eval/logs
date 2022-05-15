@@ -1,0 +1,17 @@
+vishakh@172-22-33-122 ThirdParty % python3 majority_vote.py Batch_4739845_batch_results.csv
+Index(['HITId', 'HITTypeId', 'Title', 'Description', 'Keywords', 'Reward',
+       'CreationTime', 'MaxAssignments', 'RequesterAnnotation',
+       'AssignmentDurationInSeconds', 'AutoApprovalDelayInSeconds',
+       'Expiration', 'NumberOfSimilarHITs', 'LifetimeInSeconds',
+       'AssignmentId', 'WorkerId', 'AssignmentStatus', 'AcceptTime',
+       'SubmitTime', 'AutoApprovalTime', 'ApprovalTime', 'RejectionTime',
+       'RequesterFeedback', 'WorkTimeInSeconds', 'LifetimeApprovalRate',
+       'Last30DaysApprovalRate', 'Last7DaysApprovalRate', 'Input.title',
+       'Input.poem_1', 'Input.poem_2', 'Answer.accurate1-1.yes',
+       'Answer.accurate1-2.no', 'Answer.accurate2-1.yes',
+       'Answer.accurate2-2.no', 'Answer.creative1.creative1',
+       'Answer.creative2.creative2', 'Answer.submitcode', 'Approve', 'Reject'],
+      dtype='object')
+Is Collaborative Poem Accurate:  0.9803921568627451 50 138 0.9019607843137255
+Is Solo Poem Accurate:  0.9607843137254902 49 139 0.9084967320261438
+Is Collaborative Poem Preferred:  0.5686274509803921 29 82 0.5359477124183006
