@@ -22,6 +22,16 @@ tot_inst2 = []
 tot_fl1 = []
 tot_fl2 = []
 tot_c1 = []
+votes_c1 = []
+votes_inst1 = []
+votes_inst2 = []
+votes_fl1 = []
+votes_fl2 = [] 
+
+agreement_c = []
+agreement_f = []
+agreement_i1 = []
+agreement_i2 = []
 
 for key in items.keys():
     item = items[key]
@@ -44,23 +54,46 @@ for key in items.keys():
     else:
         tot_c1.append(0)
 
+    if c1 == 0 or c1 == 3:
+        agreement_c.append(1)
+    else:
+        agreement_c.append(0)
+
     if inst1 >= 2:
         tot_inst1.append(1)
     else:
         tot_inst1.append(0)
+
+    if inst1 == 3 or inst1 == 0:
+        agreement_i1.append(1)
+    else:
+        agreement_i1.append(0)
 
     if inst2 >= 2:
         tot_inst2.append(1)
     else:
         tot_inst2.append(0)
 
+    if inst2 == 3 or inst2 == 0:
+        agreement_i2.append(1)
+    else:
+        agreement_i2.append(0)
+
     tot_fl1.append(fl1/3.0)
     tot_fl2.append(fl2/3.0)
+    votes_c1.append(c1)
+    votes_inst1.append(inst1)
+    votes_inst2.append(inst2)
+    votes_fl1.append(fl2)
+    votes_fl2.append(fl1)
 
-print("CV1 is better? ", sum(tot_c1)/len(tot_c1), tot_c1)
-print("CV1 satisfies Instruction? ", sum(tot_inst1)/len(tot_inst1), tot_inst1)
-print("CV2 satisfies Instruction? ", sum(tot_inst2)/len(tot_inst2), tot_inst2)
-print("Is CV1 fluent? ", sum(tot_fl1)/len(tot_fl1), tot_fl1)
-print("Is CV2 fluent? ", sum(tot_fl2)/len(tot_fl2), tot_fl2)
+print("CV1 is better? ", sum(tot_c1)/len(tot_c1))# , tot_c1)
+print("Agreement on which is better: ", sum(agreement_c)/len(agreement_c))
+print("CV1 satisfies Instruction? ", sum(tot_inst1)/len(tot_inst1), votes_inst1) # , tot_inst1)
+print("Agreement on Instruction CV1: ", sum(agreement_i1)/len(agreement_i1))
+print("CV2 satisfies Instruction? ", sum(tot_inst2)/len(tot_inst2), votes_inst2)
+print("Agreement on Instruction CV2: ", sum(agreement_i2)/len(agreement_i2))
+print("Is CV1 fluent? ", sum(tot_fl1)/len(tot_fl1))#, votes_fl1)
+print("Is CV2 fluent? ", sum(tot_fl2)/len(tot_fl2))#, votes_fl2)
 
 # pdb.set_trace()
