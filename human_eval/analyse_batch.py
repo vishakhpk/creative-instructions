@@ -1,6 +1,7 @@
 import sys
 import pdb
 import pandas as pd
+import scipy.stats as st
 
 fname = sys.argv[1]
 
@@ -96,4 +97,16 @@ print("Agreement on Instruction CV2: ", sum(agreement_i2)/len(agreement_i2))
 print("Is CV1 fluent? ", sum(tot_fl1)/len(tot_fl1))#, votes_fl1)
 print("Is CV2 fluent? ", sum(tot_fl2)/len(tot_fl2))#, votes_fl2)
 
-# pdb.set_trace()
+r, p = st.pointbiserialr(tot_inst1, tot_fl1)
+print("CV1: Correlation between fluency and success", r, p)
+r, p = st.pointbiserialr(tot_inst2, tot_fl2)
+print("CV2: Correlation between fluency and success", r, p)
+temp = pd.crosstab(tot_inst1, tot_c1)
+# print(temp)
+r, p, dof, expected = st.chi2_contingency(temp)
+print("CV1: Correlation between 1/0 creativity and success", r, p)
+tot_c2 = [(i+1)%2 for i in tot_c1]
+temp = pd.crosstab(tot_inst2, tot_c2)
+# print(temp)
+r, p, dof, expected = st.chi2_contingency(temp)
+print("CV2: Correlation between 1/0 creativity and success", r, p)
