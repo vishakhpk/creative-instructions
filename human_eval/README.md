@@ -14,5 +14,5 @@ python3 create_csv.py <t5 output> <gpt3 output> <csv filename>
 
 And to analyze the AMT results
 ```
-python3 l
+python3 analyze_batchl
 ```
