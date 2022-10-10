@@ -1,0 +1,151 @@
+----------------------------------------
+T53B1
+----------------------------------------
+0.34615384615384615 27 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 8, 'simile': 3, 'metaphor': 2, 'haiku': 3, 'end': 10, 'start': 0, 'subject': 1}
+----------------------------------------
+T53B1
+----------------------------------------
+0.34615384615384615 27 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 7, 'simile': 3, 'metaphor': 3, 'haiku': 4, 'end': 9, 'start': 0, 'subject': 1}
+----------------------------------------
+T53B1
+----------------------------------------
+0.3974358974358974 31 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 9, 'simile': 3, 'metaphor': 3, 'haiku': 4, 'end': 11, 'start': 0, 'subject': 1}
+----------------------------------------
+T53B1
+----------------------------------------
+0.358974358974359 28 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 5, 'simile': 3, 'metaphor': 4, 'haiku': 2, 'end': 12, 'start': 0, 'subject': 2}
+----------------------------------------
+T53B1
+----------------------------------------
+0.38461538461538464 30 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 5, 'simile': 4, 'metaphor': 4, 'haiku': 6, 'end': 9, 'start': 0, 'subject': 2}
+----------------------------------------
+T03B1
+----------------------------------------
+0.3333333333333333 26 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 6, 'simile': 2, 'metaphor': 3, 'haiku': 4, 'end': 8, 'start': 0, 'subject': 3}
+----------------------------------------
+T03B1
+----------------------------------------
+0.34615384615384615 27 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 5, 'simile': 4, 'metaphor': 3, 'haiku': 5, 'end': 8, 'start': 0, 'subject': 2}
+----------------------------------------
+T03B1
+----------------------------------------
+0.3076923076923077 24 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 6, 'simile': 2, 'metaphor': 3, 'haiku': 2, 'end': 10, 'start': 0, 'subject': 1}
+----------------------------------------
+T03B1
+----------------------------------------
+0.3333333333333333 26 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 5, 'simile': 2, 'metaphor': 4, 'haiku': 3, 'end': 10, 'start': 0, 'subject': 2}
+----------------------------------------
+T03B1
+----------------------------------------
+0.2948717948717949 23 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 5, 'simile': 2, 'metaphor': 4, 'haiku': 1, 'end': 8, 'start': 0, 'subject': 3}
+----------------------------------------
+T0pp
+----------------------------------------
+0.14102564102564102 11 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 2, 'simile': 1, 'metaphor': 2, 'haiku': 0, 'end': 3, 'start': 0, 'subject': 3}
+----------------------------------------
+T0pp
+----------------------------------------
+0.19230769230769232 15 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 3, 'simile': 0, 'metaphor': 1, 'haiku': 1, 'end': 6, 'start': 0, 'subject': 4}
+----------------------------------------
+T0pp
+----------------------------------------
+0.14102564102564102 11 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 3, 'simile': 2, 'metaphor': 0, 'haiku': 0, 'end': 4, 'start': 0, 'subject': 2}
+----------------------------------------
+T0pp
+----------------------------------------
+0.1794871794871795 14 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 6, 'simile': 0, 'metaphor': 0, 'haiku': 1, 'end': 6, 'start': 0, 'subject': 1}
+----------------------------------------
+T0pp
+----------------------------------------
+0.19230769230769232 15 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 4, 'simile': 1, 'metaphor': 2, 'haiku': 0, 'end': 4, 'start': 0, 'subject': 4}
+----------------------------------------
+T511B_DS
+----------------------------------------
+0.5 39 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 10, 'simile': 5, 'metaphor': 6, 'haiku': 4, 'end': 11, 'start': 0, 'subject': 3}
+----------------------------------------
+T511B_DS
+----------------------------------------
+0.6025641025641025 47 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 9, 'simile': 3, 'metaphor': 8, 'haiku': 9, 'end': 14, 'start': 0, 'subject': 4}
+----------------------------------------
+T511B_DS
+----------------------------------------
+0.5128205128205128 40 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 8, 'simile': 4, 'metaphor': 5, 'haiku': 5, 'end': 13, 'start': 0, 'subject': 5}
+----------------------------------------
+T511B_DS
+----------------------------------------
+0.5 39 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 7, 'simile': 3, 'metaphor': 7, 'haiku': 4, 'end': 14, 'start': 0, 'subject': 4}
+----------------------------------------
+T511B_DS
+----------------------------------------
+0.5512820512820513 43 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78
+{'rhyme': 10, 'simile': 4, 'metaphor': 6, 'haiku': 6, 'end': 14, 'start': 0, 'subject': 3}
+Singularity> sh run_score_automatic_eval.sh
+----------------------------------------
+InstructGPT
+----------------------------------------
+0.3974358974358974 31 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78                  
+{'rhyme': 5, 'simile': 4, 'metaphor': 4, 'haiku': 3, 'end': 9, 'start': 0, 'subject': 6}                       
+----------------------------------------
+InstructGPT
+----------------------------------------
+0.4230769230769231 33 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78                  
+{'rhyme': 6, 'simile': 4, 'metaphor': 5, 'haiku': 1, 'end': 11, 'start': 0, 'subject': 6}                      
+----------------------------------------
+InstructGPT
+----------------------------------------
+0.3974358974358974 31 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78                  
+{'rhyme': 7, 'simile': 4, 'metaphor': 4, 'haiku': 4, 'end': 7, 'start': 0, 'subject': 5}                       
+----------------------------------------
+InstructGPT
+----------------------------------------
+0.4230769230769231 33 78
+{'rhyme': 20, 'simile': 5, 'metaphor': 8, 'haiku': 9, 'end': 30, 'start': 0, 'subject': 6} 78                  
+{'rhyme': 6, 'simile': 4, 'metaphor': 6, 'haiku': 1, 'end': 10, 'start': 0, 'subject': 6}                      
+----------------------------------------
+InstructGPT
+----------------------------------------
+0.417910447761194 28 67
+{'rhyme': 17, 'simile': 3, 'metaphor': 8, 'haiku': 9, 'end': 26, 'start': 0, 'subject': 4} 67                  
+{'rhyme': 6, 'simile': 3, 'metaphor': 5, 'haiku': 2, 'end': 8, 'start': 0, 'subject': 4} 

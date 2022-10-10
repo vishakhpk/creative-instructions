@@ -1,0 +1,151 @@
+----------------------------------------
+T53B1
+----------------------------------------
+0.8170731707317073 67 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 12, 'simile': 10, 'metaphor': 10, 'haiku': 5, 'end': 18, 'start': 0, 'subject': 12}
+----------------------------------------
+T53B1
+----------------------------------------
+0.8170731707317073 67 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 11, 'simile': 10, 'metaphor': 10, 'haiku': 5, 'end': 20, 'start': 0, 'subject': 11}
+----------------------------------------
+T53B1
+----------------------------------------
+0.9024390243902439 74 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 13, 'simile': 10, 'metaphor': 10, 'haiku': 6, 'end': 21, 'start': 0, 'subject': 14}
+----------------------------------------
+T53B1
+----------------------------------------
+0.8414634146341463 69 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 11, 'simile': 10, 'metaphor': 10, 'haiku': 7, 'end': 18, 'start': 0, 'subject': 13}
+----------------------------------------
+T53B1
+----------------------------------------
+0.8292682926829268 68 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 10, 'simile': 10, 'metaphor': 10, 'haiku': 4, 'end': 21, 'start': 0, 'subject': 13}
+----------------------------------------
+T03B1
+----------------------------------------
+0.8536585365853658 70 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 11, 'simile': 9, 'metaphor': 10, 'haiku': 7, 'end': 21, 'start': 0, 'subject': 12}
+----------------------------------------
+T03B1
+----------------------------------------
+0.8048780487804879 66 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 9, 'simile': 10, 'metaphor': 10, 'haiku': 6, 'end': 20, 'start': 0, 'subject': 11}
+----------------------------------------
+T03B1
+----------------------------------------
+0.8658536585365854 71 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 12, 'simile': 9, 'metaphor': 10, 'haiku': 8, 'end': 19, 'start': 0, 'subject': 13}
+----------------------------------------
+T03B1
+----------------------------------------
+0.8170731707317073 67 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 10, 'simile': 9, 'metaphor': 10, 'haiku': 5, 'end': 19, 'start': 0, 'subject': 14}
+----------------------------------------
+T03B1
+----------------------------------------
+0.8048780487804879 66 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 10, 'simile': 10, 'metaphor': 10, 'haiku': 6, 'end': 16, 'start': 0, 'subject': 14}
+----------------------------------------
+T0pp
+----------------------------------------
+0.34146341463414637 28 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 5, 'simile': 2, 'metaphor': 1, 'haiku': 3, 'end': 4, 'start': 0, 'subject': 13}
+----------------------------------------
+T0pp
+----------------------------------------
+0.2804878048780488 23 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 1, 'simile': 1, 'metaphor': 1, 'haiku': 1, 'end': 5, 'start': 0, 'subject': 14}
+----------------------------------------
+T0pp
+----------------------------------------
+0.24390243902439024 20 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 1, 'simile': 3, 'metaphor': 0, 'haiku': 1, 'end': 2, 'start': 0, 'subject': 13}
+----------------------------------------
+T0pp
+----------------------------------------
+0.3170731707317073 26 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 3, 'simile': 1, 'metaphor': 5, 'haiku': 1, 'end': 5, 'start': 0, 'subject': 11}
+----------------------------------------
+T0pp
+----------------------------------------
+0.32926829268292684 27 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 4, 'simile': 1, 'metaphor': 3, 'haiku': 2, 'end': 5, 'start': 0, 'subject': 12}
+----------------------------------------
+T511B_DS
+----------------------------------------
+0.8536585365853658 70 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 9, 'simile': 10, 'metaphor': 10, 'haiku': 6, 'end': 21, 'start': 0, 'subject': 14}
+----------------------------------------
+T511B_DS
+----------------------------------------
+0.9146341463414634 75 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 14, 'simile': 9, 'metaphor': 10, 'haiku': 7, 'end': 21, 'start': 0, 'subject': 14}
+----------------------------------------
+T511B_DS
+----------------------------------------
+0.9024390243902439 74 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 11, 'simile': 10, 'metaphor': 10, 'haiku': 7, 'end': 22, 'start': 0, 'subject': 14}
+----------------------------------------
+T511B_DS
+----------------------------------------
+0.8780487804878049 72 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 10, 'simile': 9, 'metaphor': 10, 'haiku': 8, 'end': 21, 'start': 0, 'subject': 14}
+----------------------------------------
+T511B_DS
+----------------------------------------
+0.9146341463414634 75 82
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82
+{'rhyme': 12, 'simile': 10, 'metaphor': 10, 'haiku': 8, 'end': 22, 'start': 0, 'subject': 13}
+Singularity> sh run_score_automatic_eval.sh                                                                                  
+----------------------------------------                                                                                     
+InstructGPT                                                                                                                  
+----------------------------------------                                                                                     
+0.5609756097560976 46 82                                                                                                     
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82                            
+{'rhyme': 8, 'simile': 7, 'metaphor': 10, 'haiku': 3, 'end': 6, 'start': 0, 'subject': 12}                                   
+----------------------------------------                                                                                     
+InstructGPT                                                                                                                  
+----------------------------------------                                                                                     
+0.5487804878048781 45 82                                                                                                     
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82                            
+{'rhyme': 9, 'simile': 8, 'metaphor': 9, 'haiku': 3, 'end': 3, 'start': 0, 'subject': 13}                                    
+----------------------------------------                                                                                     
+InstructGPT                                                                                                                  
+----------------------------------------                                                                                     
+0.5975609756097561 49 82                                                                                                     
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82                            
+{'rhyme': 8, 'simile': 8, 'metaphor': 9, 'haiku': 7, 'end': 3, 'start': 0, 'subject': 14}                                    
+----------------------------------------                                                                                     
+InstructGPT                                                                                                                  
+----------------------------------------                                                                                     
+0.5609756097560976 46 82                                                                                                     
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82                            
+{'rhyme': 5, 'simile': 8, 'metaphor': 8, 'haiku': 3, 'end': 9, 'start': 0, 'subject': 13}                                    
+----------------------------------------                                                                                     
+InstructGPT                                                                                                                  
+----------------------------------------                                                                                     
+0.573170731707317 47 82                                                                                                      
+{'rhyme': 14, 'simile': 11, 'metaphor': 10, 'haiku': 11, 'end': 22, 'start': 0, 'subject': 14} 82                            
+{'rhyme': 10, 'simile': 7, 'metaphor': 10, 'haiku': 4, 'end': 4, 'start': 0, 'subject': 12}   

@@ -25,16 +25,17 @@ Currently tests for subject (rouge match), rhyme (with a dictionary i.e. not per
 python automatic_eval.py <filename with instructions and stored generations> <type of eval: rhyme/subejct/simile/metaphor/haiku>
 ```
 
+Generated output files are in the different model directories in ./outputs/.
+We ran 5 inferences each and reported averaged metrics for the paper. 
+The script to calculate the success rates from the paper is also available here. 
+
+```
+sh run_automatic_eval.sh
+```
+
+
 ### Run Generation for Human Evaluation
 ```
 python inference_model.py <model directory> <input test set file> <output filename to be written>
 ```
 
-
-## SCAN
-
-### Accuracy of generations
-
-```
-python eval_accuracy.py <filename of generations from generate_output>
-```
