@@ -37,7 +37,7 @@
 {"translation": {"en1": "Write a poetic sentence that includes the word 'ignorance' and ending in 'barbarism'", "en2": "They stumble on sorrowful shards there it is, the ignorance of barbarism."}}
 {"translation": {"en1": "Generate a poetic sentence that contains 'dogs' and ending in 'glass'", "en2": "Shouting like dumb crazy dogs against the glass."}}
 {"translation": {"en1": "Write a poetic sentence about 'beginning' and ending in 'words'", "en2": "Would be the first beginning of thy words."}}
-{"translation": {"en1": "Write a next sentence in a poetry given the previous sentence 'It finds the garage window even faster' and including the word 'kitchen'", "en2": "The muffled yelling from the kitchen stops"}}
+{"translation": {"en1": "Write a next sentence in a poetry given the previous sentence 'It finds the garage window even faster' and invluding the word 'kitchen'", "en2": "The muffled yelling from the kitchen stops"}}
 {"translation": {"en1": "Generate a next sentence in a poetry given the previous sentence '*Every once a while I lower the blinds' and ending in 'play'", "en2": "Waiting for someone to call me out to play"}}
 {"translation": {"en1": "Write a haiku about 'gave her tulips' and ending in 'grave'", "en2": "We gave her tulips. / For her birthday, there's no cake. / Flowers on her grave."}}
 {"translation": {"en1": "Write a haiku about 'mind wanders off' and ending in 'north'", "en2": "My mind wanders off / It wanders off endlessly / To the plains out north"}}
@@ -54,14 +54,25 @@
 {"translation": {"en1": "Write a poetic sentence about 'enchantment' and ending in a word which rhymes with 'should'", "en2": "And danced in the sweet ocean air."}}
 {"translation": {"en1": "Write a poetic sentence that starts with a word that rhymes with 'hi' and has a metaphor about 'bravery'", "en2": "And danced in the sweet ocean air."}}
 {"translation": {"en1": "Write a poetic sentence about 'food' that ends in a word that rhymes with 'wheeze' and has a simile for 'hungry'", "en2": "And danced in the sweet ocean air."}}
-{"translation": {"en1":Write a poetic sentence that contains the word 'blossom' and ending in a word which rhymes with 'free'", "en2": "And a blossom of white in the midst of the tree"}}
-{"translation": {"en1":Write a poetic sentence about 'waves' and ending in a word which rhymes with 'thin'", "en2": "The waves of the deepest seas within."}}
+{"translation": {"en1": "Write a poetic sentence that contains the word 'blossom' and ending in a word which rhymes with 'free'", "en2": "And a blossom of white in the midst of the tree"}}
+{"translation": {"en1": "Write a poetic sentence about 'waves' and ending in a word which rhymes with 'thin'", "en2": "The waves of the deepest seas within."}}
 {"translation": {"en1":"Write a poetic sentence that contains the word 'innocence' and ending in a word which rhymes with 'tilt'", "en2": "Is he a thief who has pilfered innocence and guilt"}}
 {"translation": {"en1":"Write a simile about 'attraction' and starting in 'Attraction draws'", "en2": "Attraction draws me like a moth to flies"}}
-{"translation": {"en1":"Write a simile about 'melancholy' and starting in 'Melancholy feels'", "en2": "Melancholy feels like a ship lost in the ocean"}}
+{"translation": {"en1":"Write a simile about 'melancholy' and starting in 'Melancholy feels'", "en2": "Attraction draws me like a moth to flies"}}
 {"translation": {"en1":"Write a poetic sentence starting with the word 'They' and ending in 'parallel line'", "en2": "They compare their relationship to a parallel line."}}
 {"translation": {"en1":"Write a poetic sentence starting with the word 'A small' and ending in 'limousine stairs'", "en2": "A small cartoon cloud rains on a man as he makes his way up the limousine stairs"}}
 {"translation": {"en1":"Write a poetic sentence starting with the word 'I walked' and containing the word 'chlorine'", "en2": "I walked under the chlorine blue sky,"}}
 {"translation": {"en1":"Write a poetic sentence starting with the word 'And I sat' and containing the word 'soft and white'", "en2": "And I sat for a while,taking in her glory, soft and white."}}
 {"translation": {"en1":"Write a poetic sentence starting with the word 'The warmth' and ending in 'alive'", "en2": "The warmth is the only thing keeping us alive"}}
 {"translation": {"en1": "Write a poetic sentence about 'hue' and ending in 'suffering'", "en2": "Whose violet hue is steeped in suffering."}}
+{"translation": {"en1": "Write a haiku about 'Curtained windows' and ending in 'cat'", "en2": "Nighttime, city street. / Curtained windows, gentle rain. / Silhouetted cat."}}
+{"translation": {"en1": "Write a haiku about 'praying for peace' and ending in 'sunflower'", "en2": "She's praying for peace / her son sent to fight and die / pocket sunflower."}}
+{"translation": {"en1": "Write a haiku about 'yellow sunrise' and ending in 'forward'", "en2": "From yellow sunrise / To the blush of pink setting / I shall move forward."}}
+{"translation": {"en1": "Write a haiku that starts with the word 'Castles in the sand' and ending in 'destruction'", "en2": "Castles in the sand / May be a poor mans dream beach / house; of destruction."}}
+{"translation": {"en1": "Write a haiku about 'blood stained face' and ending in 'feathers'", "en2": "blood stained face midnight / a glass of wine in our hearts / a dog shakes feathers"}}
+{"translation": {"en1": "Write a metaphor about 'detachment' and ending in 'closed'", "en2": "Detachment is a door that stays closed."}}
+{"translation": {"en1": "Write a metaphor about 'church' and ending in 'pure'", "en2": "The church is a sanctuary of the pure."}}
+{"translation": {"en1": "Write a metaphor about 'poetry' and ending in 'throat'", "en2": "Poetry is a way of taking life by the throat."}}
+{"translation": {"en1": "Write a metaphor about 'prayer' and ending in 'thoughts'", "en2": "Prayer is a concentration of positive thoughts."}}
+{"translation": {"en1": "Write a metaphor about 'a skyscraper' and ending in 'ambiton'", "en2": "A skyscraper is a tyrant's ambition"}}
+{"translation": {"en1": "Write a metaphor about 'imagination' and ending in 'wings'", "en2": "Your imagination is a bird with broken wings."}}
