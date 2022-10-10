@@ -1,4 +1,4 @@
-Scripts for Human Evaluation on AMT:
+## Scripts for Human Evaluation on AMT:
 
 First run inference on any of the trained models with eval\_scripts/inference\_model.py or GPT3 (with eval\_scripts/inference\_openai\_api.py). Then we select the best output using our automatic metrics:
 
@@ -16,3 +16,6 @@ And to analyze the AMT results
 ```
 python3 analyze_batch.py <csv file from mturk>
 ```
+
+## Logs of Interactions from User Study
+We provide the full logs of users interactions and corresponding poems written in the poems\_submission directory. 
