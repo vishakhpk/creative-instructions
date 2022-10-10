@@ -9,8 +9,8 @@ deepspeed --num_gpus=4 ./run_translation_deepspeed.py \
 	--save_strategy=epoch \
 	--do_train \
 	--do_eval \
-	--train_file /home/tuhin.chakr/train.json \
-	--validation_file /home/tuhin.chakr/val.json \
+	--train_file ./train.json \
+	--validation_file ./val.json \
 	--learning_rate 1e-4 \
 	--gradient_accumulation_steps 21 \
 	--overwrite_output_dir \
@@ -21,4 +21,4 @@ deepspeed --num_gpus=4 ./run_translation_deepspeed.py \
 	--per_device_eval_batch_size $BS \
 	--source_lang en_XX \
 	--target_lang en_XX \
-	--deepspeed  /home/tuhin.chakr/transformers/tests/deepspeed/ds_config_zero3_1.json 
+	--deepspeed  ./ds_config_zero3_1.json 

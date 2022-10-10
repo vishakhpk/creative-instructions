@@ -24,7 +24,3 @@ Version: 0.5.8+09260b6
           device_map = {device_ids[0]: list(range(0, 6)),device_ids[1]: list(range(6,12)),device_ids[2]: list(range(12,18)),device_ids[3]: list(range(18,24))}
           model.parallelize(device_map)
 
-## TODOs
-1. Deepspeed config + HF code
-2. Version/Environment Info
-3. Links to checkpoints

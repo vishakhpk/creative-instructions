@@ -328,9 +328,9 @@ def main():
     # Distributed training:
     # The .from_pretrained methods guarantee that only one local process can concurrently
     # download model & vocab.
-    tigerfish = "/local/nlp/temp/"
-    piranha = "/local/nlpswordfish/tuhin/"
-    cachemachine = tigerfish
+    tigerfish = "/your/4GPU/machine"
+    piranha = "/your/2GPU/machine"
+    cachemachine = piranha 
     config = AutoConfig.from_pretrained(
         model_args.config_name if model_args.config_name else model_args.model_name_or_path,
         cache_dir=cachemachine,
