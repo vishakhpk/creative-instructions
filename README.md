@@ -1,6 +1,6 @@
 # Help me write a poem: Instruction Tuning as a Vehicle for Collaborative Poetry Writing
 
-Repo associated with the EMNLP 2022 paper (Link)
+Repo associated with the EMNLP 2022 paper (https://arxiv.org/pdf/2210.13669.pdf)
 
 ## Code
 - Scripts to train the model with both deepspeed and model parallelism are in training\_scripts with an associated README.  
@@ -15,4 +15,10 @@ Repo associated with the EMNLP 2022 paper (Link)
 - [Model weights](https://drive.google.com/drive/folders/1mjTji9wCfX4KA039wpyQLSMx2A9jLCwe?usp=sharing) of our finetuned T5-11B model (TODO)
 
 ## Citation
-TODO
+
+                                  @article{chakrabarty2022help,
+                                    title={Help me write a poem: Instruction Tuning as a Vehicle for Collaborative Poetry Writing},
+                                    author={Chakrabarty, Tuhin and Padmakumar, Vishakh and He, He},
+                                    journal={arXiv preprint arXiv:2210.13669},
+                                    year={2022}
+                                  }
