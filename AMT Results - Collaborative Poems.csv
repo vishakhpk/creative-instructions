@@ -1,0 +1,384 @@
+WorkTimeInSeconds,Input.idx,Answer.feedback,Answer.how-good-instruction,Answer.how-helpful-model,WorkerId,Answer.uid,uid,title,collab poem,solo poem,Input.title,WorkTimeInSeconds,
+314,1,,5,5,A22DF0EWILGRLV,3ef592bd-0ddb-4bb7-833f-40592ee0eaa5,3ef592bd-0ddb-4bb7-833f-40592ee0eaa5,A Breakup: The Talk,"Coffee, tea, gin, whiskey... whatever took your fancy.
+We talked, you watched, I listened.
+I walked away, but you stayed.
+You said you cared, but you didn't.","Having a talk can be hard
+Everyone is on their guard
+I asked him to sit
+and explained it was time to split",A Breakup: The Talk,948,Equal
+235,5,,5,5,A3B1P3B6X3AM2B,b7544df5-15a8-42da-80d0-beedb8834868,b7544df5-15a8-42da-80d0-beedb8834868,A Samurai and his Sandwich,"The samurai ate a sandwich for lunch.
+He ate it with his chopsticks.
+I watched him as he ate it.
+And then he went and dropped it.","Bloody battles awaits for our sword wielding friend.
+Contest of steel upon steel, till only one is left in the end.
+Protected his most precious item from the fiends now all bloody.
+But a sandwich, his favorite meal, ham cheese mustard and honey.",A Samurai and his Sandwich,837,Solo
+614,4,"The AI is very competent, some features are definitely more useful than others though.",5,5,A173A97OFDAX9F,862a7e4b-7e26-4949-a8f5-afa5bbb238b4,862a7e4b-7e26-4949-a8f5-afa5bbb238b4,A satisfied trip,"I’m taking a trip, with stops at zoos, aquariums.
+I want to see a polar bear! I’ll take photos of penguins.
+And in the travels i have made.
+I feel now a profound satisfaction.","What is a satisfied trip? 
+Is it the long road trips?
+That consist of friends and eating chips?
+Or is it the memories we make on the trip",A satisfied trip,1042,Collab
+364,3,"Having more options to choose from, a larger pool, would be a help.",4.5,4,A7P3R1AIA4TVV,55d19ef2-9e65-42bc-bc86-73266bd559d4,55d19ef2-9e65-42bc-bc86-73266bd559d4,Adrift,"A cloud of memory flows across the horizon.
+The sailor's mate; when the seas tighten.
+I'll find my way back to my native shore.
+Then sigh no more.","At thirty two I had no vision
+No real hopes, apathetic indecision
+Every day was like being on a boat
+With no direction all I do is float",Adrift,185,Solo
+801,1,No feedback at this time.,3,3.5,A26K8OELA8ZDI9,7c0703ff-ab65-453a-9f62-9e2937948ece,7c0703ff-ab65-453a-9f62-9e2937948ece,Another Day,"The world has not yet awakened.
+Darkness still creeps, but the day is not far.
+Oh wait! there's the sun, and thus a solitary regret.
+I still can't believe I haven't been to bed yet.","Today is just another day
+There is so much I want to say
+but my words have little sway
+so instead I just pray",Another Day,760,Collab
+337,3,I think it works very fine and I wish I had this whenever I had writer's block.,4,4.5,A11YS0T8MV3Q7C,c1f35931-3a2c-45c8-9eb8-346eca7365a6,c1f35931-3a2c-45c8-9eb8-346eca7365a6,Breathless,"The storm grew fiercer and fierce.
+As we escaped, we screamed.
+Fear is a stumbling block.
+And it's getting harder to breathe.
+Then all the world was dead.
+Before I could say a peep
+With black birds swarming around our heads.
+We were lost in the deep. ","He left me breathless
+I felt like a mess
+Trying to figure out my feelings gave me stress
+I did want to eventually confess",Breathless,1524,Collab
+959,1,,5,4,A3B1P3B6X3AM2B,0c0eabac-410c-484a-8462-96662fb86f7f,0c0eabac-410c-484a-8462-96662fb86f7f,Captors,"There once was a man who was abducted.
+They covered his head in a bucket.
+The man was confused and didn't know what to do.
+So he dashed and caused a ruckus.","The war has ended, leaving deaths and sorrows;
+He crawls on the ground, escaping from being captured;
+Dreaded and painful, freedom is the only hope he has;
+""No, No, No,"" the captor says, there's nothing left to you.",Captors,1057,Equal
+680,3,,5,5,A22DF0EWILGRLV,f22ae147-5032-436a-bbef-0eb94362aa94,f22ae147-5032-436a-bbef-0eb94362aa94,Climate Change,"Mother earth could get no rest.
+Inspite of always trying her best.
+It was because her heart was shattered.
+As planet earth, smothered by the weight, lies bare and tattered.","Climate change is caused by us
+Now the world is making a fuss
+We acted a bit sus
+and now this happened because of us",Climate Change,3450,Collab
+1046,4,Some of the rhyming words it suggested didn't really rhyme.,3,4.5,ADJ9I7ZBFYFH7,54098018-5da8-4130-80a9-1441c862da8e,54098018-5da8-4130-80a9-1441c862da8e,Decadence,"The cake is like a cloud of joy.
+The frosting is like a rainbow.
+One slice is heaven on Earth,
+A flowing chocolate volcano.","Open up Instagram and you will see all of the pleasures you'll ever need
+Photos of food, cars, and female models
+All competing for likes and comments
+Social connection broken down, with many indulgences all around",Decadence,519,Collab
+451,7,,5,4,A3B1P3B6X3AM2B,543e9a81-455c-4644-b557-20d390f601cf,543e9a81-455c-4644-b557-20d390f601cf,Deep Ocean,"Into the depths of the ocean.
+I can't see what lies ahead,
+So I'll just keep swimming.
+Unless I wind up dead.","No one had a notion
+Not even after all the commotion
+Everything felt like it was in slow motion
+As I slowly drowned in this deep ocean",Deep Ocean,2138,Equal
+785,7,"I know it might be too much, could I set up a theme in the beginning and all my following instructions would be framed within the theme of the poem, which could be very helpful. In general the AI is quite useful.",5,5,A173A97OFDAX9F,6fb3dafc-5370-4dc7-b1e5-d01887f794e7,6fb3dafc-5370-4dc7-b1e5-d01887f794e7,Departure by the clouds,"In the clouds I saw her standing, and the harps of her sorrow.
+The stars glistened, and I hoped, they'd be shining tomorrow.
+She dances into light like the butterfly, the moth and the shadow.
+Then I realized, her departure from the sky could be a gift thorough.","Greeted by hatred and distrust, man is tired;
+Cheated by friends and love, he has no words;
+Meeting by the stars, that's the original plan;
+""How about goodbye instead?"" A cloud in trousers says.",Departure by the clouds,1516,Collab
+706,5,"The rhyming words for sure need help. A lot don't come to rhyming. Also, sometimes when you ask it to suggest the next sentence, it doesn't copy over the previous sentence, and gets you to copy it in before suggesting anything.",3,2.5,A1ILD5BPLI8X1P,95886f63-c8d3-40a4-8846-441ce3490440,95886f63-c8d3-40a4-8846-441ce3490440,Desire is a thorn you can't snuff out,"Is bliss, then, such concupiscence as this.
+A savage lust for naught but a moment
+A lone, solitary pleasure - dismissed,
+By all, but you, my one true opponent","The cute girl at the bar, seems like she's alone
+You're alone too, but your wife is at home
+What's the harm of saying hello?
+As you ask yourself you already know",Desire is a thorn you can't snuff out,174,Collab
+621,1,"I wanted an option that combine the ""write a line related to the previous line"" and ""write a line ending with a word that rhymes with ____"". Also, it is terrible at rhyming words. Some ""rhymes"" aren't even close/explainable by English pronunciation quirks (""near and we""?!?). Also, maybe a ""memory bank"" of suggested lines? A couple of times I remembered a previous line that would work well later in the poem, but it was gone and other than just typing it in, I couldn't figure out how to get it back.",3,3,A2ONILC0LZKG6Y,c2959056-2b79-4568-8d9d-4429240520bc,c2959056-2b79-4568-8d9d-4429240520bc,False Day,"And the bells are chiming in the steeples.
+And the sun is shining on the fields;
+And birds are singing somewhere near
+But then he was gone, and i felt fear.","What is a false day?
+It is a day that is not real
+It is a day that nothing is what it seems
+That is a false day",False Day,3058,Collab
+310,2,A good task overall and the tool seems to work fine.,4,4.5,A11YS0T8MV3Q7C,fc66a4aa-10ac-4993-a814-62e8da4576e0,fc66a4aa-10ac-4993-a814-62e8da4576e0,Foe or Friend,"Hold him a while.
+Tell him you need a friend.
+Our relationship is a tangle of weeds.
+But I'll embrace him until the end.
+You know me like a friend,
+I love you like a foe. ","There's no rule that says you have to be nice
+When it came to being mean you didn't think twice
+But one day you apologized for all you'd did wrong
+You said you wanted to be friends all along",Foe or Friend,298,Equal
+1451,4,,4,4,A3ROADR7T6811,b0edfc15-b1d0-4b4c-8497-99ae74b8e2a4,b0edfc15-b1d0-4b4c-8497-99ae74b8e2a4,form of slavery,"That the world is a vast, boundless ocean.
+But people with brains have another notion.
+The 'freedom' that you speak of is an illusion;
+I have arrived at one conclusion.
+I have no love for my own soul.","It's a free country, but you pay to live
+Working everyday, your time you must give
+Working is essential, you must try your best
+You might as well be chained to your desk",form of slavery,131,Collab
+400,4,The best part of the tool is getting help with words at the end of a sentence and then being able to build off that.,4.5,4,A11YS0T8MV3Q7C,8f8a7824-d9e0-407e-8df7-c46ebd4ff970,8f8a7824-d9e0-407e-8df7-c46ebd4ff970,Free From You,"And you are the one who set the trap.
+The ideas that lingered fell apart real fast.
+Lust is a mighty thief.
+Wherever it goes, it gives no remorse.
+And I feel it as my own heart.
+That we are better on our own.
+Knowing we were better apart.
+I'd rather leave you all alone. ","Freedom is not free, that what the war taught him;
+Dreaded and painful, old memories just be brought back;
+""Leave me alone"", that's what he said ;
+""Nothing can tear us apart"", she smiles yet he screams.",Free From You,2307,Collab
+546,4,,5,5,A22DF0EWILGRLV,1461110c-7e7f-4e18-9788-d39db32c9ea0,1461110c-7e7f-4e18-9788-d39db32c9ea0,Friends & Comfort,"I'll be there for you, I am your friend.
+I'll listen to you vent, I will not judge.
+I’ll hold your hand, I will not leave.
+I’ll be there for you, I swear.","A warm cup of coffee on a winter day
+Staying in bed, wasting the day away
+A friend calls you up and wants to come over
+Movies and games while the storm passes over",Friends & Comfort,303,Solo
+379,2,,5,5,A1ILD5BPLI8X1P,b12e8f64-f85d-46cf-8fd3-62544ed40c5f,b12e8f64-f85d-46cf-8fd3-62544ed40c5f,Glass ceiling,"My dreams shatter like a glass ceiling
+As you walk away, dragging a broken shard
+I watch you leave, you no longer have meaning
+As I lay there in the dark, my heart turns hard","Bashing my head against the ceiling,
+again and again, till it shatters.
+if I can't make it, I'll help the next person,
+by all that's holy, I hope this matters.",Glass ceiling,2667,Collab
+946,5,"The AI is very competent. Not sure about the feature ""suggest a topic"", it asks for a specific word in a sentence rather than a topic word which doesn't have to be included in the sentence.",5,5,A173A97OFDAX9F,631f8e1a-24c5-4a66-8399-7c1bd6d45234,631f8e1a-24c5-4a66-8399-7c1bd6d45234,Glory in vain,"Time was when a man would die for glory.
+But now, all that's left is ash.
+Death comes like a cold wind, thudding of a door closing after а party.
+Only leaving the old woman with a feeling of sadness.","Is this glory in vain?
+Did we really have to suffer through all this pain?
+What did we gain
+If this glory was in vain",Glory in vain,402,Collab
+817,6,This time I used the feature where you put in a whole sentence and it comes up with one to follow which I liked a lot. Very good tool that I would love to keep using for when I write.,4,4.5,A11YS0T8MV3Q7C,0caca333-8f28-457f-b644-da627d9e82a1,0caca333-8f28-457f-b644-da627d9e82a1,How Far We've Come,"The sky has become for us a bed.
+For we lay asleep and pray to the stars.
+Dreaming is a way to forget the pain.
+Is but a relief from the heaviness in my head.
+Tomorrow we wake to escape from today.
+Remember where we once were at the start. 
+And how much we've changed.","Wagon travels through rain and shine,
+Sagen counts his fingers day and night;
+""when will we arrive, Papa?""
+""Just appreciate how far we've come, son.""",How Far We've Come,2815,
+1285,5,,4,4.5,ADJ9I7ZBFYFH7,2f114349-6a3b-434f-8bd3-b77ab496cf47,2f114349-6a3b-434f-8bd3-b77ab496cf47,Hunger,"The storm is a savage beast.
+It's teeth are bared and its mouth swells wide.
+From its ferocity I must hide,
+In some safe haven, where it cannot feast.","I remember when I was younger
+I felt like I was dying from hunger
+When I got older
+there was so much to shoulder",Hunger,1224,
+501,4,,5,5,A1ILD5BPLI8X1P,72f6eb09-0459-49d9-9b09-ac36cb82961c,72f6eb09-0459-49d9-9b09-ac36cb82961c,I don't think I'll ever be seen,"I enjoy the bliss of the solitary.
+I know I will never be a part of that herd.
+Different; no marching in line with the military
+Just a sluggish shuffle of mediocrity, unheard.","Perhaps I should have been a spy
+I never seem to catch anyone's eye
+Everyday I'm unnoticed by the crowd
+They wouldn't even look at me if I were loud",I don't think I'll ever be seen,198,
+389,1,No feedback,4.5,5,AFRJKS3Z3H4CA,636a9ccc-ef20-495e-9948-b0824a8f680e,636a9ccc-ef20-495e-9948-b0824a8f680e,Inside the void,"Air rises bitter from the night.
+I feel the cold within in my chest.
+The sun will not concede her light.
+Forever in darkness, my eyes oppressed.","Trapped in the hallow, with no sense of time;
+Kept in the darkness, with memories fading away;
+Wept the man, ""where am I?""
+Clapped by the spirit, ""welcome to void.""",Inside the void,1464,
+588,2,No feedback.,3.5,3.5,A26K8OELA8ZDI9,a4ef685d-12c1-4d8a-83c1-55e092bf8c2b,a4ef685d-12c1-4d8a-83c1-55e092bf8c2b,Just enough,"Growing up poor you have to be tough.
+What some would call nothing, you call enough.
+You don't think twice when you drop food on the floor.
+You wipe the dirt and count to four, because you don't have any more.","You are just enough
+There is no need to bluff
+or act tough
+No, you are just enough",Just enough,2325,
+451,5,,5,5,A22DF0EWILGRLV,cedbe88a-c80a-41af-8f7e-dc1760198fa3,cedbe88a-c80a-41af-8f7e-dc1760198fa3,Lady Luck,"Luck is like a lady,
+She comes around once in a while
+But she never sticks around
+For very long at all.","The cards were dealt by lady luck
+Others checked their cards and felt stuck
+I guess lady luck lied
+She wasn't on their side",Lady Luck,1691,
+564,4,I specified 'land' but got a bunch of sentences containing 'land' instead. Things like that should be minimized,4,4.5,AFRJKS3Z3H4CA,f6971ce5-7378-45c4-a8fc-cf17df58721b,f6971ce5-7378-45c4-a8fc-cf17df58721b,Land without a king,"The castle looms large and drear.
+And the land as a whole is breathing despair.
+The people are sick, the crops are dying
+Where is the king? Where is he lying?","What is a land without a king?
+It is a land of freedom
+It is a land of peace
+It is a land where you can soar on your wings",Land without a king,2243,
+382,5,No feedback,5,5,AFRJKS3Z3H4CA,211fe1e4-7d3b-4c1f-87ab-3c10e8657909,211fe1e4-7d3b-4c1f-87ab-3c10e8657909,Leaving the cycle,"The flame is dying, as I sigh.
+The lilac blooms, and the poppies die.
+The ant scurries to build a nest.
+Life starts for some, but I got to rest. ","I want to leave the cycle 
+The cycle of this repetitiveness 
+The constant mundane cycle of life
+I want to leave this never ending cycle",Leaving the cycle,3208,
+508,5,I thought it worked very well and this is an interesting tool to help you find lines for poems when you need them and could use hints.,4,4.5,A11YS0T8MV3Q7C,f9328b25-6be8-4ef5-8a6d-0a44583fc438,f9328b25-6be8-4ef5-8a6d-0a44583fc438,Lullaby To My Soul,"And the drout and the drift.
+All at once hit me with pain.
+The rain is a lullaby to my soul.
+Drawing clouds in my veins.
+Sorrow is a thorn.
+That leaves me impaired.
+Now my mind is entangled.
+With the memories we once shared. ","I was feeling down and in a hole
+I felt like I wasn't whole
+Life sure was taking a toll
+So my grandmother sang me a lullaby for my soul",Lullaby To My Soul,776,
+518,3,,4,4,A1ILD5BPLI8X1P,d2e02372-5d0f-49cc-9e35-6887feac7905,d2e02372-5d0f-49cc-9e35-6887feac7905,Mediocrity - The curse of the game,"Of mediocrity, which is no great thing.
+But I'm good at it, and that's a shame.
+I'm not proud of my talent, but I've become the king,
+I'm not proud to be a failure, but I'm winning the game.","It's almost impossible to be the best
+You've got to practice more than you rest
+To your surprise and your dismay
+You're still average at the end of the day",Mediocrity - The curse of the game,180,
+1218,7,"Allow the instructions to be combined. For example, ""a simile about 'x' and that rhymes with 'y.'""",3.5,4.5,ADJ9I7ZBFYFH7,9ae54fd1-a1de-4571-8df4-0e868b9b2aba,9ae54fd1-a1de-4571-8df4-0e868b9b2aba,Monarchy,"How majestic was the throne, so imposing.
+And upon it sat the king, in his prime.
+A man of great virtue, and good cheer.
+His wisdom was unmatched, so sublime.","King is tired, of looking at all the deaths he ordered;
+Queen is inspired, by committing all the conspiracies she loved;
+Between the glory and shame, the Monarchy is built by blood;
+Beneath the throne, buried the unknown owners of former crown.",Monarchy,558,
+508,1,"The AI is very competent and helpful, it's enjoyable to work with it.",5,5,A173A97OFDAX9F,9a741b38-b898-42c8-b1c4-17603ffe89cd,9a741b38-b898-42c8-b1c4-17603ffe89cd,My bizarre adventure,"My spirit yearns for a new adventure.
+My body craves a break from the mundane.
+My eyes ablaze with craziest hues.
+My heart lightens up the most fervent of fires.","The day was weird from the very start
+I could see all the desires of my heart
+I was tall, famous, with riches abound
+That was until my alarm clock sound",My bizarre adventure,189,
+2004,5,I enjoy doing this task! I can't think of any way to improve it at the moment.,4,3,AD1WGUMVD6KED,d344cedc-6dec-4797-b3a5-2b0e19e1452b,d344cedc-6dec-4797-b3a5-2b0e19e1452b,Natures peace,"The mountains, the forests, the deserts and sea
+Exploring the Earth is what gives life to me
+I can walk for miles and explore for days if I choose
+In this environment I never seem to have the blues","The sound of water flowing down stream
+The songs of birds and how easy they sing
+The sky so big in natural blue
+A calm comes over me as nature blooms",Natures peace,212,
+2686,3,"When I selected the create a sentence based on previous writing, the model only created one word and not a sentence.",5,4,AAX9LTAOIBECD,5ae3a13c-f089-408b-b09d-f0985d91c5e6,5ae3a13c-f089-408b-b09d-f0985d91c5e6,Night Cry,"The sun has soared the blue sky.
+And the night veils itself to us from high.
+The stars, the moon to you again I ask why.
+Why sigh, and moan, or whisper and cry.","It hits you, mostly at night
+The existential dread gives you a fright
+How much time do I have, am I doing things right?
+Contemplating life until the new days light",Night Cry,197,
+835,3,"I tried to get the AI to suggest a line containing the word ""hopping,"" but it kept suggesting lines with ""hoping.""",2.5,4,ADJ9I7ZBFYFH7,55c95ce5-06b4-4c94-8bf8-f2f0a34f4055,55c95ce5-06b4-4c94-8bf8-f2f0a34f4055,Ode to a Fleeing Hare,"I saw a rabbit in the grass,
+But it hopped away so quickly
+Into the forest, through a slender ray of light
+And towards a rose, red and prickly.","Approaching a bench to have a seat
+I just wanted to sit and eat
+To my surprise I heard a scatter
+I then saw a Hare run up a ladder",Ode to a Fleeing Hare,249,
+1102,2,"It would be good if the previous lines were automatically put into the poem text box, without having to tick one of the line suggestions, or ""none of the above.""",3.5,4,ADJ9I7ZBFYFH7,a59da041-1f4b-4437-ae08-3580010dd974,a59da041-1f4b-4437-ae08-3580010dd974,On the Banks of the River Shannon,"On the river's bank, I was smitten.
+The emerald water rippled in the wind.
+I saw the swans, their white feathers flapping.
+The Shannon divinely flowing, while I was peacefully napping.","I was in Ireland visiting River Shannon
+I was originally from Buckhannon
+My friend and I both ran in
+Ran into the River Shannon",On the Banks of the River Shannon,2315,
+1179,2,,5,5,A22DF0EWILGRLV,7aad44b5-b373-495e-9ad1-139211d7634d,7aad44b5-b373-495e-9ad1-139211d7634d,Open Wound,"Our love is like an open wound
+It bleeds and oozes, and it stings
+The pain is indescribable
+And the heartache, unbearable","Back home from battlefield, man is dreaded and tired;
+Greeted by debris and sorrow, he found home in ashes;
+Treated all injuries and wounds, now just what he thought;
+Wounds are now opened, fresh and painful.",Open Wound,351,
+683,3,,5,4.5,A3B1P3B6X3AM2B,b26e6154-ec91-45d7-90e1-fd0335d669ce,b26e6154-ec91-45d7-90e1-fd0335d669ce,Pirate Eliot,"A pirate, by the name of mr. eliot.
+Set out to sail the seas.
+The waves were strong and swift.
+But his skills put his mind at ease.","He was an expert at Sea, tried and true.
+No one knew what Eliot knew.
+A mighty Pirate with a deadly sword.
+Being part of his crew was never a bore.",Pirate Eliot,604,
+1994,7,Great exercise again and I continue to enjoy using the helpful tools to come up with good poetry.,4.5,4,A11YS0T8MV3Q7C,065982ff-0a21-42d1-a208-30eba20e0487,065982ff-0a21-42d1-a208-30eba20e0487,Pivoting Our Destiny,"I’m not looking for a destiny.
+But a better way out.
+Destiny is a strange term
+To describe what life is all about.
+Life is meaningful only in the moment you live it.
+So why hold onto grudges that make it hard to pivot
+But the truth is all about making sense of who we are.
+Cherish each moment and then you'll go really far.","The journey of life beings simply enough
+Sometimes the journey can get real tough
+It's in those moments we make a choice
+We take action, not holding our voice",Pivoting Our Destiny,113,
+594,3,No feedback,4.5,4.5,AFRJKS3Z3H4CA,8c506270-8f12-4e6a-a58c-d6b988174952,8c506270-8f12-4e6a-a58c-d6b988174952,Reflections of the fight unfought,"The dream of a child is dear.
+The hope for good, and conquered fear.
+The old man's dream has no such light
+Just regrets of a life where he chose not to fight.","There is so many fights that I never fought
+It feels like I'm in the same old plot
+Never standing up for my self and my beliefs
+Always feeling this constant grief",Reflections of the fight unfought,1122,
+382,4,,5,4,A3B1P3B6X3AM2B,51872fe3-b0cf-4b12-b6bd-111c3273c887,51872fe3-b0cf-4b12-b6bd-111c3273c887,Sad Clown,"A clown was missing his shoe.
+Which made him feel very blue.
+A boy came up and said cheer up.
+And those words would help him get through.","What is a sad clown?
+He is someone that hides his frown
+Every night there is a break down
+but everyone just sees him as a regular clown",Sad Clown,666,
+881,4,No feedback at this time.,4,4,A26K8OELA8ZDI9,e2a863db-0d20-4f06-9459-aa2a92331418,e2a863db-0d20-4f06-9459-aa2a92331418,Sad Reality.,"No one prepares you for growing older
+Aging is a symptom of your dreams foreclosure
+You're not a musician, but you smoke like them
+Hurry up, your lunch is over in 10","At the end of the day, what have you done?
+You work and run, and work and run
+Until you're too tired to follow your dreams
+Tomorrow you'll repeat the same routines",Sad Reality.,291,
+3072,4,,5,3.5,AD1WGUMVD6KED,1343e136-fdc6-40e7-811b-78ba1cb7fb0f,1343e136-fdc6-40e7-811b-78ba1cb7fb0f,Sweet temptation,"I want to eat the chocolate bar.
+Whose power the weak cannot resist.
+Weakness means craving in this savory war
+But happy are the lips of the chocolate kissed.","She was like a sweet temptation 
+Her words could move a nation
+She was the best creation
+She was my sweet temptation",Sweet temptation,646,
+575,2,No feedback,4.5,4.5,AFRJKS3Z3H4CA,57f8f925-5766-4f02-9b64-9814980d7e45,57f8f925-5766-4f02-9b64-9814980d7e45,The birth of life,"I see the resounding spring that brings life to the world.
+I hear the hum of the bee that brings sweetness to the air.
+The trees grow green, the flowers bloom.
+And peace reigns high in meadows fair.","The birth of a life
+One that will be filled with strife
+but that is for later on in life
+When he meets his first wife",The birth of life,1659,
+566,5,No feedback.,4,4,A26K8OELA8ZDI9,89a9593f-0a12-4a36-8950-9bdf9eb8e580,89a9593f-0a12-4a36-8950-9bdf9eb8e580,The country life.,"Small Towns feel so slow, like you're stuck in a dream.
+You can count the cars that pass without the need for a counting machine.
+I'm growing old and stale, in this routine.
+At least I have my TV screen.","Tired of traffic, noise and parking;
+Dreaded pollution, rent and crimes;
+Moving to the country seems to be the silver bullet;
+Panacea only brings loneliness instead.",The country life.,300,
+680,1,,3.5,4.5,ADJ9I7ZBFYFH7,7834e72f-a73f-4a9a-ae86-4d4ce024f0bd,7834e72f-a73f-4a9a-ae86-4d4ce024f0bd,The Dark Labyrinth,"Behold how he pours forth his wrath,
+From the depths of a fiery blaze.
+Do not follow him down the midnight path,
+Lest you get caught in his maze.","There are so many winds and turns
+and yet I still yearn 
+and pray to Minthe
+to see the end of this labyrinth",The Dark Labyrinth,1986,
+1902,1,,5,5,A3M8O363B3IAKE,98b7e31f-04ab-415f-9507-aa6c5e4f648c,98b7e31f-04ab-415f-9507-aa6c5e4f648c,The Good Life,"Then, i too, will taste the good life.
+I'll be happy with my own.
+I'll be happy with a life that's not tainted
+With all the lies that society spouts","Everyone wants a good life
+No one wants to be a low-life
+I want a good wife 
+and I want a good life",The Good Life,1860,
+1244,3,"Got a little caught up at the end, it kept telling me that I had less then 3 words in one of my sentences, but each sentence I had had more then four words. Turns out there was a space I had to delete, which the program thought was a line of words.",3.5,4,AIEKCWYZTS41V,65c4dbd5-8fd5-423c-b620-4a7ce1b65421,65c4dbd5-8fd5-423c-b620-4a7ce1b65421,The harshness of time.,"Time is a very harsh mistress all bitter and cold.
+Time is never ending everlasting and very bold.
+Time will elapse you in moments that matter.
+Time will pass and I’ll get older thinner and flatter.","Time is so harsh
+It is like going through a marsh
+Always struggling to get through the water
+Always feeling like a bother",The harshness of time.,2540,
+493,1,"It works great, just some of the rhyming words are a little off.",4.5,4.5,A1ILD5BPLI8X1P,51446d92-4830-45c7-83a1-10e41214ac55,51446d92-4830-45c7-83a1-10e41214ac55,The sky is a canvas,"The sky is the night.
+The sky is the day.
+The horizon still just a hazy light.
+With the sun soon to be an amazing display.","Some say its God's paint brush that paints the sky blue
+Some say its a natural reaction to all the things we do
+Some say its random but neither are true
+I know the sky is beautiful because of you",The sky is a canvas,145,
+644,3,"Perhaps make it follow a step by step process, forcing me to ask for a suggestion before the first line and between every line. Instead of just 4 total at any time.",3,4,A26K8OELA8ZDI9,49ab4243-da4f-4214-979f-04cd34c29857,49ab4243-da4f-4214-979f-04cd34c29857,The worst on the team.,"Basketball court, the gym is packed, the people are cheering.
+The players surrounded by those endearing.
+My family is in the bleachers, the coaches are my teachers, and my friends are in the hall.
+I just wish someone would pass me the ball.","Being small, it's hard catch a ball.
+You can't make a basket or jump high at all.
+Everyone's a giant and being a starter is just a dream.
+That's the reality when you're the worst on the team.",The worst on the team.,213,
+265,1,Tried a couple more features and they seem to help with tips and tricks.,4,4,A11YS0T8MV3Q7C,84711975-df38-4d0d-91ff-fb9324a1e1c8,84711975-df38-4d0d-91ff-fb9324a1e1c8,Thinking of You,"Measure of our life. if we can find.
+A better place to ease our minds.
+I'm not the one to blame.
+Though my thoughts make me go insane.
+And the insanity of my nihilism.
+Won't allow me to explore my pain.
+Tears of joy are behind me
+Even when I hear your name. ","I am thinking of you
+This is nothing new
+I sit there and stew 
+Over nothing else but you",Thinking of You,3510,
+399,2,,5,4.5,A3B1P3B6X3AM2B,55fdf350-8d53-4f92-ad67-95aad3b026ec,55fdf350-8d53-4f92-ad67-95aad3b026ec,Trickster,"The game of the senses is teasing.
+Playing tricks on the mind is pleasing.
+Watch as the crowd is amazed.
+And the performance was highly praised.","I know a little trickster
+I wanted to fix her
+I wanted to make her nice 
+and not someone with a vice",Trickster,3258,
